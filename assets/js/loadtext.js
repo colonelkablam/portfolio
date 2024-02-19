@@ -7,10 +7,6 @@ function loadtext(textID){
     .catch(error => console.error('Error loading the content:', error));
 }
 
-// load the text files
-loadtext("introduction");
-loadtext("introduction_full");
-
 document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('learn-more-btn');
     const fullText = document.getElementById('introduction_full-text');
@@ -28,4 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// load the text files
+loadtext("introduction");
+loadtext("introduction_full");
 
