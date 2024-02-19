@@ -2460,8 +2460,8 @@ input, select, textarea {
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 600;
-		height: calc(1.75em + 6px);
-		line-height: 1.75em;
+		height: calc(2em + 6px);
+		line-height: 2em;
 		min-width: 10em;
 		padding:  0em;
 		text-align: center;
@@ -2609,7 +2609,7 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
-		padding: 8em 4em;
+		padding: 4em 4em;
 		position: fixed;
 		text-align: right;
 		top: 0;
