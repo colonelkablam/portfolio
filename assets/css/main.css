@@ -152,7 +152,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.5em;
 	}
 
@@ -1770,6 +1770,8 @@ input, select, textarea {
 		margin: 0 0 1.5em 0;
 	}
 
+
+
 	header h2 + p {
 		font-size: 1.25em;
 		margin-top: -1em;
@@ -2135,6 +2137,9 @@ input, select, textarea {
 
 		.image.avatar {
 			border-radius: 100%;
+			width: 300px;
+			height: 300px;
+
 		}
 
 			.image.avatar:before {
@@ -2143,7 +2148,9 @@ input, select, textarea {
 
 			.image.avatar img {
 				border-radius: 100%;
-				width: 100%;
+				width: 300px;
+				height: 300px;
+
 			}
 
 /* List */
@@ -2633,14 +2640,19 @@ input, select, textarea {
 
 		#header h1 {
 			color: rgba(255, 255, 255, 0.5);
-			font-size: 1.35em;
+			font-size: 3.00em;
+			line-height: 1.75em;
+			margin: 0;
+		}
+		#header h2 {
+			color: rgba(11, 245, 11, 0.5);
+			font-size: 2.5em;
 			line-height: 1.75em;
 			margin: 0;
 		}
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
-			width: 6.25em;
 		}
 
 /* Footer */
