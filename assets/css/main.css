@@ -2596,7 +2596,7 @@ input, select, textarea {
 			overflow: hidden;
 			height: 5em; /* Adjust based on your preferred initial box size */
 			padding: 5px;
-			margin-bottom: 10px; /* Space between the text box and the button */
+			margin-bottom: 30px; /* Space between the text box and the button */
 		}
 		
 
