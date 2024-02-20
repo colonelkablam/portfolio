@@ -2589,14 +2589,14 @@ input, select, textarea {
 		.work-item p {
 			font-size: 0.8em;
 			line-height: 1.4em;
-			margin: 0;
+			margin-bottom: 1em
 		}
 
 		.work-item .text-box {
 			overflow: hidden;
 			height: 5em; /* Adjust based on your preferred initial box size */
 			padding: 5px;
-			margin-bottom: 30px; /* Space between the text box and the button */
+			margin-bottom: 1em; /* Space between the text box and the button */
 		}
 		
 
