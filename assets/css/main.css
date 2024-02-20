@@ -51,6 +51,10 @@ table {
 	border-spacing: 0;
 }
 
+article .li{
+	display: inline-block;
+}
+
 body {
 	-webkit-text-size-adjust: none;
 }
@@ -113,6 +117,10 @@ input, select, textarea {
 		border-bottom: dotted 0px;
 		color: #49bf9d;
 	}
+	
+	.right{
+		text-align: right;
+	}
 
 		a:hover {
 			border-bottom-color: transparent;
@@ -130,7 +138,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -237,8 +245,8 @@ input, select, textarea {
 	}
 
 	.align-right {
-		text-align: right;
-	}
+		display: flex;
+		justify-content: flex-end; /* Aligns children (items within the element) to the right */	}
 
 	.no-underline {
         text-decoration: none;
@@ -372,6 +380,10 @@ input, select, textarea {
 
 		.row > .col-5 {
 			width: 41.66667%;
+			display: flex;
+			justify-content: center; /* Centers children horizontally in the container */
+			align-items: center; /* Centers children vertically in the container */
+			padding-bottom: 3em;
 		}
 
 		.row > .off-5 {
@@ -2136,7 +2148,7 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
-			}
+		}
 
 		.image.avatar {
 			border-radius: 100%;
@@ -2244,6 +2256,8 @@ input, select, textarea {
 			}
 
 /* Actions */
+
+
 
 	ul.actions {
 		display: -moz-flex;
@@ -2577,6 +2591,14 @@ input, select, textarea {
 			line-height: 1.4em;
 			margin: 0;
 		}
+
+		.work-item .text-box {
+			overflow: hidden;
+			height: 5em; /* Adjust based on your preferred initial box size */
+			padding: 5px;
+			margin-bottom: 10px; /* Space between the text box and the button */
+		}
+		
 
 /* Header */
 
@@ -3014,12 +3036,12 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 6em 3em 3em 3em;
+				padding: 4em 3em 3em 0em;
 				width: 30%;
 			}
 
 				#header h1 {
-					font-size: 1.25em;
+					font-size: 2.25em;
 				}
 
 					#header h1 br {
@@ -3074,7 +3096,7 @@ input, select, textarea {
 				background-position: top left, center center;
 				background-size: auto,		cover;
 				left: auto;
-				padding: 6em 4em;
+				padding: 2em 3em;
 				position: relative;
 				text-align: center;
 				top: auto;
@@ -3178,7 +3200,7 @@ input, select, textarea {
 			}
 
 				#header h1 {
-					font-size: 1.35em;
+					font-size: 1.8em;
 				}
 
 		/* Footer */
@@ -3234,5 +3256,13 @@ input, select, textarea {
 				margin-left: 0;
 				padding-left: 0;
 			}
+		/* Work Items */
 
+		.work-item{
+			margin-bottom: 0;
+		}
+		.row > .col-5 {
+
+			padding-bottom: 0em;
+		}
 	}
