@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle the display state of the full text
         if (fullText.style.display === 'none' || fullText.style.display === '') {
             fullText.style.display = 'block'; // Show the full text
-            btn.textContent = 'Show Less'; // Change button text to 'Show Less'
+            btn.value = 'Show Less'; // Change button text to 'Show Less'
         } else {
             fullText.style.display = 'none'; // Hide the full text
-            btn.textContent = 'Learn More'; // Change button text back to 'Learn More'
+            btn.value = 'Learn More'; // Change button text back to 'Learn More'
         }
     });
 });

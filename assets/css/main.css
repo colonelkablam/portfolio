@@ -118,10 +118,6 @@ input, select, textarea {
 		color: #49bf9d;
 	}
 	
-	.right{
-		text-align: right;
-	}
-
 		a:hover {
 			border-bottom-color: transparent;
 			color: #49bf9d !important;
@@ -245,8 +241,8 @@ input, select, textarea {
 	}
 
 	.align-right {
-		display: flex;
-		justify-content: flex-end; /* Aligns children (items within the element) to the right */	}
+		text-align: right;
+	}
 
 	.no-underline {
         text-decoration: none;
@@ -2255,7 +2251,16 @@ input, select, textarea {
 
 /* Actions */
 
+/* Actions right */
+ul.actions-right {
+	display: flex;  /* Enables Flexbox */
+	justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
+	list-style: none;  /* Removes the default list styling */
+	padding-right: 2em;  /* Removes the default padding */
+  }
+ 
 
+/* Actions */
 
 	ul.actions {
 		display: -moz-flex;
@@ -2265,22 +2270,40 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
-		justify-content: space-between; /* Distributes space evenly between the items */
-
 	}
+
+	ul.actions.right{
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
+		cursor: default;
+		list-style: none;
+		padding-right: 2em;
+	}
+
+	ul.actions li.right {
+		display: flex;  /* Enables Flexbox */
+		justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
+		padding-right: 1em; 
+		flex: 0; /* Allows each item to grow and take up equal space */
+	  }
+
+	  ul.actions li.right input {
+		width: auto;
+		padding: 0 1em;
+	  }
 
 		ul.actions li {
 			padding: 0 0 0 0em;
 			vertical-align: middle;
 			flex: 1; /* Allows each item to grow and take up equal space */
-
 		}
 
 		ul.actions input {
 			width: 80%; /* Makes buttons take the full width of their list items */
 			box-sizing: border-box; /* Ensures padding and border are included in the width */
-
-		  }
+		}
 
 		ul.actions.special {
 			-moz-justify-content: center;
@@ -3199,15 +3222,15 @@ input, select, textarea {
 		/* Basic */
 
 			h1 {
-				font-size: 1.5em;
+				font-size: 1.7em;
 			}
 
 			h2 {
-				font-size: 1.8em;
+				font-size: 1.5em;
 			}
 
 			h3 {
-				font-size: 1em;
+				font-size: 1.0em;
 			}
 
 		/* Section/Article */
