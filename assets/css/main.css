@@ -380,7 +380,6 @@ input, select, textarea {
 
 		.row > .col-5 {
 			width: 41.66667%;
-			display: flex;
 			justify-content: center; /* Centers children horizontally in the container */
 			align-items: center; /* Centers children vertically in the container */
 			padding-bottom: 3em;
