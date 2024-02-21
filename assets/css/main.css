@@ -154,18 +154,18 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 2em;
+		font-size: 2.3em;
 		line-height: 1.5em;
 	}
 
 	h2 {
-		font-size: 2em;
+		font-size: 1.8em;
 		line-height: 1.5em;
 	}
 
 	h3 {
-		font-size: 1.25em;
-		line-height: 1.5em;
+		font-size: 1.3em;
+		line-height: 1.3em;
 	}
 
 	h4 {
@@ -380,6 +380,7 @@ input, select, textarea {
 
 		.row > .col-5 {
 			width: 41.66667%;
+			display: flex;
 			justify-content: center; /* Centers children horizontally in the container */
 			align-items: center; /* Centers children vertically in the container */
 			padding-bottom: 3em;
@@ -1784,8 +1785,6 @@ input, select, textarea {
 		margin: 0 0 1.5em 0;
 	}
 
-
-
 	header h2 + p {
 		font-size: 1.25em;
 		margin-top: -1em;
@@ -1807,7 +1806,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 
 /* Form */
@@ -2265,14 +2264,23 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: -1em;
 		padding-left: 0;
+		justify-content: space-between; /* Distributes space evenly between the items */
+
 	}
 
 		ul.actions li {
-			padding: 0 0 0 1em;
+			padding: 0 0 0 0em;
 			vertical-align: middle;
+			flex: 1; /* Allows each item to grow and take up equal space */
+
 		}
+
+		ul.actions input {
+			width: 80%; /* Makes buttons take the full width of their list items */
+			box-sizing: border-box; /* Ensures padding and border are included in the width */
+
+		  }
 
 		ul.actions.special {
 			-moz-justify-content: center;
@@ -2463,13 +2471,13 @@ input, select, textarea {
 		background-color: transparent;
 		border-radius: 0.35em;
 		border: solid 3px #efefef;
-		color: #5fda7a !important;
+		color: #0bb32f !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 600;
 		height: calc(2em + 6px);
 		line-height: 2em;
-		min-width: 10em;
+		min-width: 6em;
 		padding:  0em;
 		text-align: center;
 		text-decoration: none;
@@ -2480,8 +2488,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #0bb32f;
+			color: #0bb32f !important;
 		}
 
 		input[type="submit"]:active,
@@ -2489,8 +2497,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #0bb32f;
+			color: #0bb32f !important;
 		}
 
 		input[type="submit"].icon,
@@ -2533,8 +2541,8 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #49bf9d;
-			border-color: #49bf9d;
+			background-color: #0bb32f;
+			border-color: #0bb32f;
 			color: #ffffff !important;
 		}
 
@@ -2542,16 +2550,16 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #5cc6a7;
-				border-color: #5cc6a7;
+				background-color: #96daa5;
+				border-color: #96daa5;
 			}
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			.button.primary:active {
-				background-color: #3eb08f;
-				border-color: #3eb08f;
+				background-color: #0bb32f;
+				border-color: #0bb32f;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2581,19 +2589,19 @@ input, select, textarea {
 		.work-item h3 {
 			color:#919191;
 			font-weight: 800;
-			font-size: 1.5em;
+			font-size: 1.3em;
 			margin: 0 0 0.5em 0;
 		}
 
 		.work-item p {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			line-height: 1.4em;
 			margin-bottom: 1em
 		}
 
 		.work-item .text-box {
 			overflow: hidden;
-			height: 5em; /* Adjust based on your preferred initial box size */
+			height: 5.5em; /* Adjust based on your preferred initial box size */
 			padding: 5px;
 			margin-bottom: 1em; /* Space between the text box and the button */
 		}
@@ -2627,11 +2635,12 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
-		padding: 4em 4em;
+		padding: 3em 3em 3em 0em;
 		position: fixed;
 		text-align: right;
 		top: 0;
 		width: 30%;
+		max-width: 460px;
 	}
 
 		#header > * {
@@ -2647,7 +2656,7 @@ input, select, textarea {
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
 			flex-grow: 1;
-			margin: 0 0 2em 0;
+			margin: 0 0 0em 0;
 		}
 
 		#header strong, #header b {
@@ -2660,7 +2669,7 @@ input, select, textarea {
 
 		#header h1 {
 			color: rgba(255, 255, 255, 0.5);
-			font-size: 2.9em;
+			font-size: 2.7em;
 			line-height: 1.75em;
 			margin: 0;
 		}
@@ -2669,6 +2678,9 @@ input, select, textarea {
 			font-size: 2.5em;
 			line-height: 1.75em;
 			margin: 0;
+		}
+		#header h3{
+			font-size: 1.0em ;
 		}
 
 		#header .image.avatar {
@@ -3023,7 +3035,20 @@ input, select, textarea {
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
+			}
+
+			/* Header */
+
+			#header {
+				padding: 3em 3em 3em, 0em;
+				width: 30%;
+			}
+			#header h1 {
+				font-size: 2.7em;
+			}
+			#header h3 {
+				font-size: 1.0em;
 			}
 
 	}
@@ -3031,16 +3056,27 @@ input, select, textarea {
 /* Large */
 
 	@media screen and (max-width: 1280px) {
+		
+		/* Basic */
+
+		body, input, select, textarea {
+			font-size: 12pt;
+		}
 
 		/* Header */
 
 			#header {
-				padding: 4em 3em 3em 0em;
+				padding: 3em 3em, 3em, 0em;
 				width: 30%;
+				max-width: 365px;
 			}
 
 				#header h1 {
-					font-size: 2.25em;
+					font-size: 2.7em;
+				}
+
+				#header h3 {
+					font-size: 1.0em;
 				}
 
 					#header h1 br {
@@ -3066,7 +3102,7 @@ input, select, textarea {
 			#main {
 				margin-left: 30%;
 				max-width: none;
-				padding: 6em 3em 3em 3em;
+				padding: 3em 3em 3em 3em;
 				width: calc(100% - 30%);
 			}
 
@@ -3101,6 +3137,8 @@ input, select, textarea {
 				top: auto;
 				width: 100%;
 				display: block;
+				max-width: none;
+
 			}
 
 				#header h1 {
@@ -3148,7 +3186,7 @@ input, select, textarea {
 
 			#main {
 				margin: 0;
-				padding: 6em 4em;
+				padding: 3em 3em;
 				width: 100%;
 			}
 
@@ -3165,7 +3203,7 @@ input, select, textarea {
 			}
 
 			h2 {
-				font-size: 1.2em;
+				font-size: 1.8em;
 			}
 
 			h3 {
@@ -3179,7 +3217,7 @@ input, select, textarea {
 			}
 
 			header.major h2 {
-				font-size: 1.35em;
+				font-size: 2.0em;
 			}
 
 		/* List */
@@ -3195,7 +3233,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 2.25em 1.5em;
+				padding: 1.25em 1.5em;
 			}
 
 				#header h1 {
@@ -3239,7 +3277,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 4.5em 1.5em;
+				padding: 1.5em 1.5em;
 			}
 
 				#header h1 br {
