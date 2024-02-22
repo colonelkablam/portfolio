@@ -7,6 +7,15 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+		--main-green: #08b42d; 
+		--secondary-green: #bce4c4; 
+
+		--highlight-green: #08f3a5;
+		--main-blue: #4758f0; 
+		--main-red: #d86154;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -115,7 +124,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 0px;
-		color: #49bf9d;
+		color: var(--highlight-green);
 	}
 	
 		a:hover {
@@ -125,7 +134,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #0bb32f;
+		color: var(--main-green);
 		font-weight: 800;
 	}
 
@@ -246,6 +255,7 @@ input, select, textarea {
 
 	.no-underline {
         text-decoration: none;
+		color: var(--main-green); 
     }
 
 /* Container */
@@ -2492,8 +2502,8 @@ ul.actions-right {
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		background-color: transparent;
 		border-radius: 0.35em;
-		border: solid 3px #efefef;
-		color: #0bb32f !important;
+		border: solid 3px var(--secondary-green);
+		color: var(--main-green) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 600;
@@ -2510,8 +2520,9 @@ ul.actions-right {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #0bb32f;
-			color: #0bb32f !important;
+			background-color: var(--secondary-green);
+			border-color: var(--main-green);
+			color: var(--main-green) !important;
 		}
 
 		input[type="submit"]:active,
@@ -2563,8 +2574,8 @@ ul.actions-right {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #0bb32f;
-			border-color: #0bb32f;
+			background-color: var(--main-green);
+			border-color: var(--main-green);
 			color: #ffffff !important;
 		}
 
@@ -2572,8 +2583,8 @@ ul.actions-right {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #96daa5;
-				border-color: #96daa5;
+				background-color: var(--secondary-green);
+				border-color: var(--secondary-green);
 			}
 
 			input[type="submit"].primary:active,
@@ -2682,11 +2693,12 @@ ul.actions-right {
 		}
 
 		#header strong, #header b {
-			color: #0bb32f;
-			font-weight: 800;		}
+			color: var(--main-green);
+			font-weight: 800;		
+		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #0bb32f;
+			color: var(--main-green);
 		}
 
 		#header h1 {
