@@ -1862,7 +1862,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #49bf9d;
+			border-color: var(--highlight-green);
 		}
 
 	select {
@@ -1967,7 +1967,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #49bf9d;
+			border-color: var(--highlight-green);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2520,7 +2520,6 @@ ul.actions-right {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: var(--secondary-green);
 			border-color: var(--main-green);
 			color: var(--main-green) !important;
 		}
@@ -2530,8 +2529,8 @@ ul.actions-right {
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #0bb32f;
-			color: #0bb32f !important;
+			border-color: var(--main-green);
+			color: var(--main-green) !important;
 		}
 
 		input[type="submit"].icon,
@@ -2719,6 +2718,10 @@ ul.actions-right {
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
+		}
+
+		#header a{
+			font-size: 1.2em;
 		}
 
 /* Footer */
