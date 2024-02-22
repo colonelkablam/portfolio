@@ -2060,7 +2060,6 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
-			background: url("images/overlay.png");
 			border-radius: 0.35em;
 			content: '';
 			display: block;
@@ -2082,7 +2081,7 @@ input, select, textarea {
 				-ms-transition: opacity 0.2s ease-in-out;
 				transition: opacity 0.2s ease-in-out;
 				border-radius: 0.35em;
-				border: solid 3px rgba(255, 255, 255, 0.5);
+				border: solid 3px rgba(255, 255, 255, 1);
 				color: #fff;
 				content: 'View';
 				display: inline-block;
@@ -2101,17 +2100,17 @@ input, select, textarea {
 			}
 
 			.image.thumb:hover:after {
-				opacity: 1.0;
-			}
-
-			.image.thumb:hover:before {
-				background: url("images/overlay.png"), url("images/overlay.png");
+				background: url("images/overlay.png");
 				opacity: 1.0;
 			}
 
 		.image img {
-			border-radius: 0.35em;
 			display: block;
+		}
+
+		.image img.border{
+			border-radius: 0.1em;
+			box-shadow: 0 0 3px 2px #505050; 
 		}
 
 		.image.left {
