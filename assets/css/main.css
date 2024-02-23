@@ -2288,13 +2288,13 @@ ul.actions-right {
 		justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
 		cursor: default;
 		list-style: none;
-		padding-right: 2em;
+		padding-right: 0em;
 	}
 
 	ul.actions li.right {
 		display: flex;  /* Enables Flexbox */
 		justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
-		padding-right: 1em; 
+		padding-right: 0em; 
 		flex: 0; /* Allows each item to grow and take up equal space */
 	  }
 
