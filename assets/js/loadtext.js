@@ -28,4 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
 // load the text files
 loadtext("introduction");
 loadtext("introduction_full");
+loadtext("microcontroller_abstract");
 
