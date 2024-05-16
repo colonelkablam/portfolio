@@ -2056,6 +2056,136 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
+
+/* Centered and reduced size images for project pages*/
+/* Fully justified text */
+.justified-text {
+    text-align: justify;
+}
+
+/* Common styles for figure and figcaption */
+figure {
+    text-align: center; /* Center the caption under the image */
+	font-weight: bold;
+}
+
+.figure-left, .figure-right, .figure-centre {
+    width: 45%; /* Adjust this value as needed */
+    margin: 0  15px 15px 0; /* Add default margin */
+    display: inline-block; /* Make the figure an inline block element */
+}
+
+.figure-left {
+    float: left; /* Float left */
+    margin-right: 15px; /* Adjust the right margin */
+}
+
+.figure-right {
+    float: right; /* Float right */
+    margin-left: 15px; /* Adjust the left margin */
+}
+
+.figure-centre {
+	display: block;
+    margin: 0 auto 15px auto; /* Center the figure and add margin bottom */    margin: auto; /* Center the figure and add margin bottom */
+    text-align: center; /* Center the caption under the image */
+}
+
+/* Common styles for images within figures */
+figure img {
+    width: 95%; /* Make the image fill the container */
+	margin: auto; /* Add default margin */
+
+    height: auto;
+    cursor: pointer; /* Indicate that the image is clickable */
+    border: 4px solid white; /* Add a white border */
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s; /* Smooth transition for the hover effect */
+}
+
+figure img:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    border-color: white; /* Keep the border white on hover */
+}
+
+/* Container for stacking images left to right */
+.figure-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap to the next line */
+    justify-content: space-between; /* Add space between items */
+    margin-bottom: 20px; /* Add some space below the container */
+}
+
+/* Common styles for figure and figcaption */
+.figure-container figure {
+    flex: 1 1 30%; /* Adjust the basis percentage as needed */
+    margin: 10px; /* Add some space around each figure */
+    text-align: center; /* Center the caption under the image */
+}
+
+/* Common styles for images within figures */
+.figure-container figure img {
+    width: 95%; /* Make the image fill the container */
+    height: auto;
+    cursor: pointer; /* Indicate that the image is clickable */
+    border: 4px solid white; /* Add a white border */
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s; /* Smooth transition for the hover effect */
+}
+
+.figure-container figure img:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    border-color: white; /* Keep the border white on hover */
+}
+
+/* Bold captions for figures */
+.figure-container figure figcaption {
+    font-weight: bold;
+    margin-top: 5px; /* Add some spacing above the caption */
+}
+
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 4em; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%; /* Adjust this value as needed */
+    max-width: 1000px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    color: #f1f1f1;
+    font-size: 3em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Image */
 
 	.image {
@@ -2289,12 +2419,13 @@ ul.actions-right {
 		cursor: default;
 		list-style: none;
 		padding-right: 0em;
+
 	}
 
 	ul.actions li.right {
 		display: flex;  /* Enables Flexbox */
 		justify-content: flex-end;  /* Aligns the child elements (the <li> in this case) to the right */
-		padding-right: 0em; 
+		padding-right: 1em; 
 		flex: 0; /* Allows each item to grow and take up equal space */
 	  }
 

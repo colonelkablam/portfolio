@@ -1,5 +1,5 @@
 function loadtext(textID){
-    fetch('../dynamictext/' + textID + '.txt')  // Path to your text file
+    fetch('./dynamictext/' + textID + '.txt')  // Path to your text file
     .then(response => response.text())
     .then(text => {
         document.getElementById(textID + '-text').innerHTML = text;
@@ -28,5 +28,4 @@ document.addEventListener('DOMContentLoaded', function() {
 // load the text files
 loadtext("introduction");
 loadtext("introduction_full");
-loadtext("microcontroller_abstract");
 
