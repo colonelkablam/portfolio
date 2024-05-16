@@ -2093,7 +2093,7 @@ figure {
 
 /* Common styles for images within figures */
 figure img {
-    width: 95%; /* Make the image fill the container */
+    width: 90%; /* Make the image fill the container */
 	margin: auto; /* Add default margin */
 
     height: auto;
@@ -2111,7 +2111,6 @@ figure img:hover {
 /* Container for stacking images left to right */
 .figure-container {
     display: flex;
-    flex-wrap: wrap; /* Allow the items to wrap to the next line */
     justify-content: space-between; /* Add space between items */
     margin-bottom: 20px; /* Add some space below the container */
 }
