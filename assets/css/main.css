@@ -2149,7 +2149,7 @@ figure img:hover {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 4em; /* Location of the box */
+    padding-top: 0em; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -2160,20 +2160,48 @@ figure img:hover {
 }
 
 /* Modal Content (image) */
-.modal-content {
+.modal-content-image {
     margin: auto;
     display: block;
+	padding-top: 2em; /* Location of the box */
+
     width: 100%; /* Adjust this value as needed */
     max-width: 1000px;
 }
 
+/* Modal content (text display) */
+.modal-content-text {
+    background-color: #fefefe;
+    margin: 0 auto; /* Adjusted to remove gap */
+    padding: 0; /* Adjusted to remove gap */
+    border: none;
+    width: 80%;
+    max-height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Ensure the preformatted text wraps */
+	box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: adds a slight shadow for better visual separation */
+
+}
+
+/* Ensure the content inside the pre tag wraps and is readable */
+pre {
+	font-size: 22;
+    font-weight: bold;
+	white-space: pre-wrap; /* Wraps the preformatted text */
+    word-wrap: break-word; /* Breaks long words */
+    overflow-wrap: break-word; /* Breaks long words */
+    padding: 1em; /* Adds padding within the preformatted text box */
+    background-color: #fff; /* Optional: adds a background color to the preformatted text */
+}
+
 /* The Close Button */
 .close {
-    position: absolute;
+    position: fixed;
     top: 1em;
-    right: 2em;
-    color: #f1f1f1;
-    font-size: 3em;
+    right: 1em;
+    color: #cdcdcd;
+    font-size: 4em;
     font-weight: bold;
     transition: 0.3s;
 }
