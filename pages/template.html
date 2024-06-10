@@ -22,7 +22,6 @@
 					<h3><a href="mailto:nickhfharding@gmail.com" 					class = "no-underline" >nickhfharding@gmail.com //</a><br>
 					<a href="https://linkedin.com/in/nicholas-harding-6564332b0" 	class = "no-underline" >linkedIn.com //</a><br>
 					<a href="https://github.com/colonelkablam" 						class = "no-underline" >github.com //</span></a>
-
 				</div>
 			</header>
 
@@ -30,17 +29,66 @@
 			<div id="main">
 
 				<!-- One -->
+				<ul class="actions right">
+					<li class="right"><input type="submit" value="back to portfolio" class="primary" onclick="location.href='../index.html';"></li>
+					<li class="right"><input type="submit" value="github code repo" onclick="location.href='https://github.com/colonelkablam/Microcontroller_emulator';"></li>
+					<li class="right"><input type="submit" value="github.md" onclick="showReadmeModal();"></li>
+
+
+				</ul>
 					<section>
 						<header>
-							<h1><strong>Project Title</strong><br></h1>
+							<h1><strong>Template Page</strong></h1>
+							<h3><strong>More projects to follow...</strong></h1>
+
 						</header>
-						<p>Content to be added...</p>
 
-						<ul class="actions right">
-                            <li class="right"><input type="submit" value="back to portfolio" class="primary" onclick="location.href='../index.html';"></li>
-                            <li class="right"><input type="submit" value="github code repo" onclick="location.href='#';"></li>
+						<p class="justified-text"> 
+							<figure class="figure-centre">
+								<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>work in progress</figcaption>
 
-                        </ul>
+							</figure>
+						</p>
+
+					<div class="figure-container">
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>	
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>	
+					</div>
+					<div class="figure-container">
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>
+						<figure>
+							<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>octo-baddy</figcaption>
+						</figure>	
+					</div>
+					<hr>
+					<p class="justified-text">
+						<h3><strong>Helpful Resources and Content</strong></h1>
+
+						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
+						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>	
+						<a href="https://lodev.org/cgtutor/raycasting.html" target="_blank">Lode's DDA raycasting tutorial</a> - A particularly thorough explanation of raycasting.<br>	
+						
+					</p>
+
 					</section>
 
 			</div> <!-- end of main div -->
@@ -59,6 +107,20 @@
 				</div>
 			</footer>
 
+		<!-- Image display Modal --> 
+			<div id="imageModal" class="modal">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<img class="modal-content-image" id="fullImage">
+			</div>
+
+		<!-- Readme text display Modal -->
+			<div id="readmeModal" class="modal">
+   				<div class="modal-content-text">
+        			<span class="close" onclick="closeReadmeModal()">&times;</span>
+       				<pre id="readmeContent"></pre>
+				</div>
+			</div>
+
 		<!-- Scripts -->
 			<script src="../assets/js/jquery.min.js"></script>
 			<script src="../assets/js/jquery.poptrox.min.js"></script>
@@ -66,6 +128,38 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			
+			<!-- Handle the modal display - clicking on project pictures -->
+			<script>
+                function openImageModal(src) {
+                    document.getElementById("imageModal").style.display = "block";
+                    document.getElementById("fullImage").src = src;
+                }
+
+                function closeModal() {
+                    document.getElementById("imageModal").style.display = "none";
+                }
+
+				function showReadmeModal() {
+				// Show the modal
+    				document.getElementById('readmeModal').style.display = 'block';
+
+    			// Fetch the README.md file from GitHub
+    				fetch('https://raw.githubusercontent.com/colonelkablam/Microcontroller_emulator/main/README.md')
+        			.then(response => response.text())
+        			.then(data => {
+            		// Display the content in the modal
+            			document.getElementById('readmeContent').textContent = data; })
+        			.catch(error => {
+            			console.error('Error fetching README.md:', error);
+            			document.getElementById('readmeContent').textContent = 'Error loading README.md'; });
+				}
+
+				function closeReadmeModal() {
+    			// Hide the modal
+    				document.getElementById('readmeModal').style.display = 'none';
+				}
+            </script>
 
 	</body>
 </html>
