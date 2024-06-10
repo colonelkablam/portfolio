@@ -2180,7 +2180,8 @@ figure img:hover {
     margin: auto;
     display: block;
 	padding-top: 2em; /* Location of the box */
-    width: 100%; /* Adjust this value as needed */
+    width: auto; /* Adjust this value as needed */
+	height: auto; /* Adjust this value as needed */
     max-width: 1000px;
 }
 
