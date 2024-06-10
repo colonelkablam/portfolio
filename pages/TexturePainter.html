@@ -38,45 +38,36 @@
 				</ul>
 					<section>
 						<header>
-							<h1><strong>Kablam Engine</strong></h1>
-							<h3><strong>Windows Console Based Graphics Engine</strong></h1>
+							<h1><strong>TexturePainter</strong></h1>
+							<h3><strong>GUI texture editor app built using the console graphics engine</strong></h1>
 
 						</header>
 
 						<p class="justified-text"> 
-							I created a graphics engine using the Windows API, focusing on memory management and software engineering principles to achieve graphics rendering in the console window using glyphs and colours as pixels. The engine implements the console screen buffer to draw graphics, utilising virtual 'game loop' methods, to manage rendering efficiently. The project provided hands-on experience with lower-level memory management and the application of design patterns such as factory, strategy, composite and state to create expandable and maintainable code.
-							<br>
 							<figure class="figure-right">
-								<img src="../images/kablam_engine/KablamGame3D.JPG" alt="Main Screen" onclick="openImageModal(this.src)" />
-								<figcaption>Scene from Demo Game</figcaption>
-							</figure>
-							I am currently building a raycasting FPS concept game to demonstrate functionality (this can be seen <a href="../pages/KablamGame3D.html" target="_blank">here</a>). The video shows some of the game mechanics that are working at present. The textures were designed in the <a href="../pages/TexturePainter.html" target="_blank">TexturePainter</a> app, also built with the console graphics engine. 
-						</p>
+								<img src="../images/texture_painter/octo_hit_sprite.JPG" alt="Designing the Octo" onclick="openImageModal(this.src)" />
+								<figcaption>Designing the octo sprite</figcaption>
 
-						<p class="justified-text">
-							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video here</a>
-							<br>
-    						<span class="video-description">
-								This demo video shows the the concept game utilising the engine. This is still a work in progess!  </span>
-							<br>
-							Music used in game - <a href="https://freesound.org/people/Victor_Natas/sounds/684912/">Caught in the hex</a> by <a href="https://freesound.org/people/Victor_Natas/">Victor_Natas</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
+							</figure>
+                            This project arose due to the need to draw textures to be used within my graphics engine. It ended up taking a lot longer and being more complex than first intended. It became apparent that if I wanted to design some interesting sprites, hard coding 2D arrays with numbers was going to be very frustrating and take a long time. 
+                            Ultimately this editor has a pretty high level of functionality for drawing/copying/editing the textures to be used by the engine and allows for copying and pasting between sprites, filling, flipping, cutting and shape drawing.
+                            <br>
 						</p>
-						<br>
 						<hr>
 
 					<div class="figure-container">
 						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/texture_painter/octo_sprite.JPG" onclick="openImageModal(this.src)" />
+							<figcaption>Octo-baddy sprite</figcaption>
 						</figure>
 						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/texture_painter/octo_hit_sprite_full.JPG" onclick="openImageModal(this.src)" />
+							<figcaption>Rotatable texture</figcaption>
 
 						</figure>	
 						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/texture_painter/sky_texture.JPG" onclick="openImageModal(this.src)" />
+							<figcaption>Sky texture</figcaption>
 						</figure>	
 					</div>
 					<div class="figure-container">
@@ -99,7 +90,9 @@
 						<h3><strong>Helpful Resources and Content</strong></h1>
 
 						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
-						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>				
+						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>	
+						<a href="https://lodev.org/cgtutor/raycasting.html" target="_blank">Lode's DDA raycasting tutorial</a> - A particularly thorough explanation of raycasting.<br>	
+						
 					</p>
 
 					</section>
