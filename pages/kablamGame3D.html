@@ -48,19 +48,22 @@
 								<figcaption>Scene from Demo Game</figcaption>
 
 							</figure>
+							<p class="justified-text"> 
 							The game renders the 3D environment using Digital Differential Analysis (DDA) raycasting. This is possible as the world is represented as a tile-based map (essentially a 2D array of integers). There are textures for walls, floors, ceilings, and sprites, with a depth buffer system to handle rendering order and visibility, a dynamic skybox, and sound effects managed by a custom sound manager (implementing the <a href="https://www.ambiera.com/irrklang/" target="_blank">irrKlang</a> library).
 							<br><br>
 							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video here</a> This video demos current gameplay.
 							<br>
 							Music used in game - <a href="https://freesound.org/people/Victor_Natas/sounds/684912/">Caught in the hex</a> by <a href="https://freesound.org/people/Victor_Natas/">Victor_Natas</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
-							<hr> <h4><strong>Key features include:</strong></h4>
-							<li><strong>Graphics:</strong> The raycasting system iterates through each column of the screen, calculating the angle and distance to walls, floors, and ceilings. The system then uses this to determine the intersection points with the environment and sample the textures accordingly. Different display settings (e.g., normal, distance shading, angle shading) are supported, allowing for various visual effects. I am currently working on a more advanced lighting solution and the challenge is making it run at a playable speed.</li>
-							<li><strong>Texture Management:</strong>. Efficient handling and rendering of textures onto a pseudo 3D environment.</li>
-							<li><strong>Sprite Management:</strong> Using the composite design pattern, sprites are composed of multiple smaller components. This makes it easier to manage and extend their behavior for the desired effect.</li> 
-                            <li><strong>Collision Detection: </strong> line intersection collision detection algorithms are used for interactions between the player, environment, and other objects.</li>
-                            <li><strong>AI and Object Interaction:</strong> Implemented AI behaviors, including enemy characteristics and their interaction with the player and the environment. 
-							<li><strong>Sound Management:</strong> Integrated sound manager for in-game music and sound effects, enhancing the immersive experience using the irrKlang library rather than Windows for more comprehensive sound management.</li>
+							<hr>
+							<h4><strong>Key features include:</strong></h4>
+							<li class="justified-text"><strong>Graphics:</strong> The raycasting system iterates through each column of the screen, calculating the angle and distance to walls, floors, and ceilings. The system then uses this to determine the intersection points with the environment and sample the textures accordingly. Different display settings (e.g., normal, distance shading, angle shading) are supported, allowing for various visual effects. I am currently working on a more advanced lighting solution and the challenge is making it run at a playable speed.</li>
+							<li class="justified-text"><strong>Texture Management:</strong>. Efficient handling and rendering of textures onto a pseudo 3D environment.</li>
+							<li class="justified-text"><strong>Sprite Management:</strong> Using the composite design pattern, sprites are composed of multiple smaller components. This makes it easier to manage and extend their behavior for the desired effect.</li> 
+                            <li class="justified-text"><strong>Collision Detection: </strong> line intersection collision detection algorithms are used for interactions between the player, environment, and other objects.</li>
+                            <li class="justified-text"><strong>AI and Object Interaction:</strong> Implemented AI behaviors, including enemy characteristics and their interaction with the player and the environment. 
+							<li class="justified-text"><strong>Sound Management:</strong> Integrated sound manager for in-game music and sound effects, enhancing the immersive experience using the irrKlang library rather than Windows for more comprehensive sound management.</li>
 							<br>
+							<p class="justified-text"> 
                             This project has been a wonderful way to increase my ability to develop complex systems from the ground up, and taught me a lot about computer graphics, game mechanics, and software engineering principles in the process. It continues to be great fun to develop.
 							<br>
 						</p>
@@ -97,10 +100,10 @@
 						</figure>	
 					</div>
 					<hr>
-					<p class="justified-text">
-						<h3><strong>Helpful Resources and Content</strong></h1>
+					<h3><strong>Helpful Resources and Content</strong></h1>
 
-						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
+					<p class="justified-text">
+						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some floundering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
 						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>	
 						<a href="https://lodev.org/cgtutor/raycasting.html" target="_blank">Lode's DDA raycasting tutorial</a> - A particularly thorough explanation of raycasting.<br>	
 						
