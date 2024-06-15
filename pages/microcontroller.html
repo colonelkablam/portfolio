@@ -38,19 +38,20 @@
 					<section>
 						<header>
 							<h1><strong>8-Bit Microcontroller Simulator Application</strong></h1>
-							<h3><strong>My Software Engineering MSc Thesis Project</strong></h1>
-							<br>
-
+							<h3><strong>My Software Engineering MSc Thesis Project</strong></h3>
 						</header>
 
 						<figure class="figure-right">
-							<img src="../images/microcontroller/MCU_demo.gif" alt="Main Screen" onclick="location.href='https://drive.google.com/file/d/1PAgS8aMcEwBAof5MfmomapHtCo38Kt4H/view?usp=sharing';" />
+							<img src="../images/microcontroller/MCU_demo.gif" alt="MCU Simulator in Action" alt="Class Diagram" style="width: 90%; height: auto;" onclick="location.href='https://drive.google.com/file/d/1PAgS8aMcEwBAof5MfmomapHtCo38Kt4H/view?usp=sharing';" />
 							<figcaption>MCU Simulator in Action</figcaption>
 						</figure>
 
 						<p class="justified-text"> 
-							The objective of this project was the creation of a self-contained desktop application that simulates the behaviour of a microcontroller, offering a user an interactive learning experience of low-level computer architecture. The application was designed with an emphasis on simplicity and accessibility. The graphical elements of the application are deliberately minimal to ensure a lightweight footprint on a user's system.
+							The objective of this project was the creation of a self-contained desktop application that simulates the behaviour of a microcontroller, offering a user an interactive learning experience of low-level computer architecture.
+							<br>
+							The application was designed with an emphasis on simplicity and accessibility. The graphical elements of the application are deliberately minimal to ensure a lightweight footprint on a user's system.
 						</p>
+						<hr class="transparent-hr">
 
 						<p class="justified-text">
 							<a href="https://drive.google.com/file/d/1PAgS8aMcEwBAof5MfmomapHtCo38Kt4H/view?usp=sharing" target="_blank">Watch brief demo video here</a>
@@ -64,9 +65,9 @@
     						<span class="video-description">
 								This demo video shows the compiling of a test program in assembly and then its execution when loaded into the program memory. The MCU goes into a loop, waiting until the PORTA pin 0 input is set to 1. The instructions then jump to a coundown, displayed on the PORTB pin outputs. When zero is reached the program briefly demos the call stack and then goes into a loop, incrementing a value in the data memory address 0x21 by one each time.  </span>
 						</p>
-						<br>
 						<hr>
-
+						<br>
+					<h3><strong>Gallery</strong></h3>
 					<div class="figure-container">
 						<figure>
 							<img src="../images/microcontroller/MCU_main_screen.JPG" onclick="openImageModal(this.src)" />
@@ -99,27 +100,126 @@
 					</div>
 					<hr>
 
-					<figure class="figure-left">
-						<img src="../images/microcontroller/mc_sim_system_arc.jpg" alt="Class Diagram" style="width: 90%; height: auto;" onclick="openImageModal(this.src)" />
-						<figcaption>System Architecture</figcaption>
+					<div>
+					<br>
+					<h3><strong>Further details if you are still interested...</strong></h3>
+					<figure class="figure-right">
+						<img src="../images/microcontroller/pic_block_diagram.jpg" alt="PIC16C712 Block Diagram" style="width: 60%; height: auto;" onclick="openImageModal(this.src)" />
+						<figcaption>PIC16C712 System Architecture</figcaption>
 					</figure>	
-
 						<p class="justified-text"> 
 							Given the inherently modular nature of microcontroller functionality, the project adopts an object-oriented programming (OOP) model to represent the distinct roles within the microcontroller's internal architecture.
+							<br><br>
 							Microchip's PIC®16C712 microcontroller (PIC16) was selected as the 'blueprint' design for the functionality of the simulation. This decision was based on several factors, including its relatively small instruction set of 35, and the extensive and readily available documentation.
 						</p>
-						<hr>
-
+						<hr class="transparent-hr">
 						<figure class="figure-left">
-							<img src="../images/microcontroller/mc_sim_class_diagram.png" alt="Class Diagram" style="width: 90%; height: auto;" onclick="openImageModal(this.src)" />
-							<figcaption>Class Diagram</figcaption>
+							<img src="../images/microcontroller/mc_sim_class_diagram.png" alt="Class Diagram" style="width: 80%; height: auto;" onclick="openImageModal(this.src)" />
+							<figcaption>Simulator Class Diagram</figcaption>
 						</figure>	
 
 						<p class="justified-text">
-							For the graphical user interface (GUI), a windows based design was chosen to provide a user friendly environment for learners to interact with. Tkinter, Python's standard GUI toolkit, was chosen as the primary tool for the GUI implementation, and as Python supports OOP principles it was also used to implement the logic.
+							For the graphical user interface (GUI), a windows based design was chosen to provide a user friendly environment for learners to interact with. Tkinter, Python's standard GUI toolkit, was chosen as the primary tool for the GUI implementation, and Python was also used to implement the logic.
+							<br><br>
 							In essence, this project created an accessible and educational tool that enables learners to explore the intricacies of low-level programming within a microcontroller environment. By utilising OOP and using Python's tkiniter GUI tools, the project delivers straightforward and engaging learning.
 						</p>
+						<hr class="transparent-hr">
+					</div>
+
+					<div>
+						<h3><strong>Implementation Data Structures and Algorithms</strong></h3>
+						<p class="justified-text">
+							The native data structures in Python were suitable for the task of simulating the data within the PIC16. Tkinter GUI classes were suitable for the containing structures as this allowed for relatively straightforward integration between the graphical representation of changes and the stored data itself. This is a brief overview of implementation.
+						</p>
+
+						<h3><strong>Program Memory</strong></h3>
+						<p class="justified-text">
+							The program memory is implemented as a custom ProgramMemoryFrame class object that contains a Python List, containing custom Instruction class objects. A List is suitable as it needs to be mutable and referenced by an integer address as an index. The Instruction object contains three tk.StringVar class objects representing the mnemonic, 1st operand, and 2nd operand of an instruction to be executed by the InstructionDecoder class. <br>
+							In a PIC16 an instruction is stored as a 14-bit binary 'word' in the memory. The Program Counter (PC) is a 13-bit value, which in theory allows the ability to address up to 8,192 words. The PIC16C712 has 1,024 words of program memory. The MCU Simulator has been implemented with 512 words to keep running speeds faster, although this could be easily changed by altering a constant. The PIC16's datasheet was used during the implementation.
+						</p>
+
+						<h3><strong>Program Counter (PC)</strong></h3>
+						<p class="justified-text">
+							The ProgramCounter class contains a 13-bit NBitNumber object. It has methods to store its previous value and also to get and set methods. It can also return the value of a lower and upper byte, used to populate the PCL and PCLATH named registers. This is different to how a PC is implemented in an actual PIC16 but it was felt that keeping
+							it as a single object meant that addressing and altering the program memory was more straightforward. A single byte counter would not have allowed the addressing of more than 256 locations. The InstructionDecoder class determines the next PC address after interpreting the given instruction and changes it accordingly.
+						</p>
+
+						<h3><strong>Data Memory / Special Function Registers (SFRs)</strong></h3>
+						<p class="justified-text">
+							<strong>Data memory</strong> is implemented as a custom DataMemoryFrame class object that contains a Python List that is populated with custom NBitNumber class objects. These effectively represent a byte in each data address location. Again, a List object is suitable as the Data Memory is mutable and can be addressed by an integer index.<br> 
+							The NBitNumber class contains a tk.IntVar object to represent its decimal value, and a tk.StringVar for a hex value, and another tk.StringVar for the binary value. Contained within this class are methods to keep the hex and binary string values updated when setting its value, handle any value wrap-around that might occur from setting a value larger than an n-bit number can contain, and manipulation of individual bits (set, clear, and retrive). <br>
+							This approach meant that the conversion from a decimal integer, the format that the data was manipulated in, to a hex or binary string representation was abstracted to the 'byte' or n-bit object itself. This allowed the logic to be carried out on them to be performed in integer value, simplifying the code. The NBitNumber was originally implemented as only an 8-bit number but as the system requires various bit-length numbers (the Program Counter for example) it was decided to make a class that could represent this without the need to define more.<br>
+							<figure class="figure-centre">
+								<img src="../images/microcontroller/SFR_set.jpg" alt="Special Function Registers" style="width: 100%; height: auto;" onclick="openImageModal(this.src)" />
+								<figcaption>Special Function Registers Implemented</figcaption>
+							</figure>
+							<p class="justified-text">
+							<br>
+							<strong>The Special Function Registers</strong> all exist within the DataMemoryFrame. A Python Dictionary was used to store the string name (i.e. “STATUS”) as a key and its integer address was the value. This allowed the SFRs to be retrieved using an integer or a string value.<br>
+							This simulation does not make a distinction between the General Purpose Registers (GPR) and SFRs. The user is able to manipulate any address in the data memory, including SFRs.<br>
+							In an actual PIC16 the GPRs are assigned addresses 0x20 to 0x7F, and 0xA0 to 0xBF. This is due to the data being split between two 'banks' with manipulation of the 5th STATUS register bit required to change banks. This design occurs because the address of the data memory is represented as the lower 7 bits of the instruction word, with the 8th bit stored within STATUS. It was felt that, although implementable within this system, it would add complexity outside of the project scope to require the switching of banks to access data registers.
+						</p>
+
+						<h3><strong>The Stack</strong></h3>
+						<p class="justified-text">
+							The stack is implemented within the StackDisplayFrame class using a Python deque object. This is essentially a native Python stack data structure with the ability to pop and push data. As the stack has inherited from the tk.Frame class its contents could easily be updated within the GUI. The PIC16 stack can store up to 8 addresses and is a FILO data
+							structure.
+						</p>
+
+						<h3><strong>Working Register (W reg)</strong></h3>
+						</strong></h3>
+						<p class="justified-text">
+							In the PIC16 the working register is an 8-bit register specifically designed for Arithmetic and Logic Unit operations and is not accessible as an addressable register. Here it is represented by an 8-bit NBitNumber object contained within the MCUFrame. It is not part of the SFRs.
+						</p>
+
+						<h3><strong>Instruction Decoder</strong></h3>
+						<figure class="figure-right">
+							<img src="../images/microcontroller/PIC16_instruction.jpg" alt="PIC16 Instruction Format" style="width: 90%; height: auto;" onclick="openImageModal(this.src)" />
+							<figcaption>The PIC16 14-bit Instruction</figcaption>
+						</figure>
+						<p class="justified-text">
+							The InstructionDecoder acts as a combination of the PIC16's Arithmetic and Logic Unit (ALU) and the conditional branching logic present in the CPU's architecture. The InstructionDecoder class is contained within the MCUFrame and handles the logic of a given instruction. The PIC16 has 35 instructions. Ideally most of the instructions would have been implemented but some are only relevant to various peripherals that were not within the scope of this project, and were not implemented.
+							<br><br>
+							A PIC16 instruction consists of a 14-bit 'word' (a binary number). Each instruction comprises an OPCODE that specifies the type of instruction to be carried out, and one or more operands that further define the operation. As described by Microchip's datasheet, Instructions can be grouped into three primary categories.
+							<br><br>
+							<strong>Byte-Orientated Operations:</strong>
+							These operations manipulate data at the byte level. 'f' represents a file register designator, indicating which file register the instruction operates on. 'd' is the destination designator, determining where the operation's result is stored. If 'd' is zero, the result goes to the W register; if 'd' is one, the result goes to the file register specified in the instruction.
+							<br>
+							<strong>Bit-Oriented Operations:</strong>
+							These operations work with individual bits. 'b' represents a bit field designator, indicating the affected bit's position, while 'f' specifies the file where the bit is located.
+							<br>
+							<strong>Literal and Control Operations:</strong>
+							In this category, 'k' represents an eight or eleven-bit constant or literal value. These instructions typically involve control flow or handle literal values.
+							<br><br>
+							All instructions are executed within a single instruction cycle. However, if a conditional test
+							evaluates to true or if the program counter is modified as a result of an instruction, the
+							execution time is doubled. One instruction cycle comprises four oscillator periods.
+							<figure class="figure-centre">
+								<img src="../images/microcontroller/instruction_set_mcu.jpg" alt="PIC16 Instruction Set" style="width: 100%; height: auto;" onclick="openImageModal(this.src)" />
+								<figcaption>The 23 Instructions Implemented</figcaption>
+							</figure>
+							<br>
+							<p class="justified-text">
+							Rather than interpreting binary values, it was decided that an instruction would be represented by 3 strings, reflecting the OPCODE (that will be the assembly mnemonic), and then two operands. Every instruction will have three parts, even if empty, and the Instruction decoder will implement the behaviour of the microcontroller's CPU interpreting the 14-bit word by parsing through the instruction part.
+						</p>
+						<h3><strong>Compiler</strong></h3>
+						</strong></h3>
+						<p class="justified-right">
+							<figure class="figure-right">
+								<img src="../images/microcontroller/compiler_instruction_parts.jpg" alt="Compilation of user code" style="width: 100%; height: auto;" onclick="openImageModal(this.src)" />
+								<figcaption>Compiling Users 'Assembly' Code</figcaption>
+							</figure>
+							<br>
+
+							The Compiler class is contained within the CodeWindow class. This is passed the user's assembly text by the CodeWindow and returns a set of instructions as a Python List the length of the number of instructions generated by compilation. Each List entry is itself another Python List of three strings; a mnemonic, an 1st operand, and a 2nd operand.
+							<br><br>
+							This is the format that the ProgramMemoryFrame needs in order to insert the instructions into the memory. The compiler compiles the content of the users textbox, line by line, using regular expression matching (regex) to find any constants and directives made by the user. It also checks that the addresses are in the correct format.
+							<br><br>
+							After parsing through and converting the code into lines of instructions, the compiler will then replace any declared variable locations (EQU) or program section declarations (PSECT) with the correct address. Any line preceded with a ';' is ignored. Whitespace (spaces and tabs) is ignored and instructions that exceed the initial 3 are ignored. Any missing instructions are filled with a default value (0xFF for the 1st operand, and 1 for the 2nd).
+						</p>
 						<br>
+
+					</div>
 						<hr>
 
 						<ul class="actions right">
