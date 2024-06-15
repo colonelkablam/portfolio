@@ -134,29 +134,42 @@
 
 						<h3><strong>Program Memory</strong></h3>
 						<p class="justified-text">
-							The program memory is implemented as a custom ProgramMemoryFrame class object that contains a Python List, containing custom Instruction class objects. A List is suitable as it needs to be mutable and referenced by an integer address as an index. The Instruction object contains three tk.StringVar class objects representing the mnemonic, 1st operand, and 2nd operand of an instruction to be executed by the InstructionDecoder class. <br>
+							The program memory is implemented as a custom ProgramMemoryFrame class object that contains a Python List, containing custom Instruction class objects. A List is suitable as it needs to be mutable and referenced by an integer address as an index. The Instruction object contains three tk.StringVar class objects representing the mnemonic, 1st operand, and 2nd operand of an instruction to be executed by the InstructionDecoder class. <br><br>
 							In a PIC16 an instruction is stored as a 14-bit binary 'word' in the memory. The Program Counter (PC) is a 13-bit value, which in theory allows the ability to address up to 8,192 words. The PIC16C712 has 1,024 words of program memory. The MCU Simulator has been implemented with 512 words to keep running speeds faster, although this could be easily changed by altering a constant. The PIC16's datasheet was used during the implementation.
 						</p>
 
 						<h3><strong>Program Counter (PC)</strong></h3>
 						<p class="justified-text">
-							The ProgramCounter class contains a 13-bit NBitNumber object. It has methods to store its previous value and also to get and set methods. It can also return the value of a lower and upper byte, used to populate the PCL and PCLATH named registers. This is different to how a PC is implemented in an actual PIC16 but it was felt that keeping
+							The ProgramCounter class contains a 13-bit NBitNumber object. It has methods to store its previous value and also to get and set methods. It can also return the value of a lower and upper byte, used to populate the PCL and PCLATH named registers.<br><br>
+							This is different to how a PC is implemented in an actual PIC16 but it was felt that keeping
 							it as a single object meant that addressing and altering the program memory was more straightforward. A single byte counter would not have allowed the addressing of more than 256 locations. The InstructionDecoder class determines the next PC address after interpreting the given instruction and changes it accordingly.
 						</p>
 
 						<h3><strong>Data Memory / Special Function Registers (SFRs)</strong></h3>
+
+						<figure class="figure-right">
+							<img src="../images/microcontroller/data_memory_layout.jpg" alt="Data Memory Organization" style="width: 60%; height: auto;" onclick="openImageModal(this.src)" />
+							<figcaption>Data Memory Organization</figcaption>
+						</figure>
 						<p class="justified-text">
-							<strong>Data memory</strong> is implemented as a custom DataMemoryFrame class object that contains a Python List that is populated with custom NBitNumber class objects. These effectively represent a byte in each data address location. Again, a List object is suitable as the Data Memory is mutable and can be addressed by an integer index.<br> 
-							The NBitNumber class contains a tk.IntVar object to represent its decimal value, and a tk.StringVar for a hex value, and another tk.StringVar for the binary value. Contained within this class are methods to keep the hex and binary string values updated when setting its value, handle any value wrap-around that might occur from setting a value larger than an n-bit number can contain, and manipulation of individual bits (set, clear, and retrive). <br>
-							This approach meant that the conversion from a decimal integer, the format that the data was manipulated in, to a hex or binary string representation was abstracted to the 'byte' or n-bit object itself. This allowed the logic to be carried out on them to be performed in integer value, simplifying the code. The NBitNumber was originally implemented as only an 8-bit number but as the system requires various bit-length numbers (the Program Counter for example) it was decided to make a class that could represent this without the need to define more.<br>
+							<strong>Data memory</strong> is implemented as a custom DataMemoryFrame class object that contains a Python List that is populated with custom NBitNumber class objects. These effectively represent a byte in each data address location. Again, a List object is suitable as the Data Memory is mutable and can be addressed by an integer index.
+							<br><br>
+							The NBitNumber class contains a tk.IntVar object to represent its decimal value, and a tk.StringVar for a hex value, and another tk.StringVar for the binary value. Contained within this class are methods to keep the hex and binary string values updated when setting its value, handle any value wrap-around that might occur from setting a value larger than an n-bit number can contain, and manipulation of individual bits (set, clear, and retrive). 
+							<br><br>
+							This approach meant that the conversion from a decimal integer, the format that the data was manipulated in, to a hex or binary string representation was abstracted to the 'byte' or n-bit object itself. This allowed the logic to be carried out on them to be performed in integer value, simplifying the code. The NBitNumber was originally implemented as only an 8-bit number but as the system requires various bit-length numbers (the Program Counter for example) it was decided to make a class that could represent this without the need to define more.<br><br>
+
+							<hr class="transparent-hr">
+
 							<figure class="figure-centre">
 								<img src="../images/microcontroller/SFR_set.jpg" alt="Special Function Registers" style="width: 100%; height: auto;" onclick="openImageModal(this.src)" />
 								<figcaption>Special Function Registers Implemented</figcaption>
 							</figure>
 							<p class="justified-text">
 							<br>
-							<strong>The Special Function Registers</strong> all exist within the DataMemoryFrame. A Python Dictionary was used to store the string name (i.e. “STATUS”) as a key and its integer address was the value. This allowed the SFRs to be retrieved using an integer or a string value.<br>
-							This simulation does not make a distinction between the General Purpose Registers (GPR) and SFRs. The user is able to manipulate any address in the data memory, including SFRs.<br>
+							<strong>The Special Function Registers</strong> all exist within the DataMemoryFrame. A Python Dictionary was used to store the string name (i.e. “STATUS”) as a key and its integer address was the value. This allowed the SFRs to be retrieved using an integer or a string value.
+							<br><br>
+							This simulation does not make a distinction between the General Purpose Registers (GPR) and SFRs. The user is able to manipulate any address in the data memory, including SFRs.
+							<br><br>
 							In an actual PIC16 the GPRs are assigned addresses 0x20 to 0x7F, and 0xA0 to 0xBF. This is due to the data being split between two 'banks' with manipulation of the 5th STATUS register bit required to change banks. This design occurs because the address of the data memory is represented as the lower 7 bits of the instruction word, with the 8th bit stored within STATUS. It was felt that, although implementable within this system, it would add complexity outside of the project scope to require the switching of banks to access data registers.
 						</p>
 
@@ -210,7 +223,7 @@
 								<figcaption>Compiling Users 'Assembly' Code</figcaption>
 							</figure>
 							<br>
-
+							<p class="justified-text">
 							The Compiler class is contained within the CodeWindow class. This is passed the user's assembly text by the CodeWindow and returns a set of instructions as a Python List the length of the number of instructions generated by compilation. Each List entry is itself another Python List of three strings; a mnemonic, an 1st operand, and a 2nd operand.
 							<br><br>
 							This is the format that the ProgramMemoryFrame needs in order to insert the instructions into the memory. The compiler compiles the content of the users textbox, line by line, using regular expression matching (regex) to find any constants and directives made by the user. It also checks that the addresses are in the correct format.
