@@ -25,7 +25,7 @@
 			</header>
 
 		<!-- Main -->
-			<div id="main">
+			<div id="main" class="justified-text">
 
 				<!-- One -->
 				<ul class="actions right">
@@ -38,43 +38,108 @@
 					<section>
 						<header>
 							<h1><strong>Windows Console Based Graphics Engine</strong></h1>
-							<h3><strong>A brief introduction to the 'Kablam Engine'</strong></h3>
+							<h2><strong>A brief introduction to the 'Kablam Engine'</strong></h2>
 						</header>
 
-						<p class="justified-text"> 
-							I created a graphics engine using the Windows API, focusing on memory management and software engineering principles to achieve graphics rendering in the console window using glyphs and colours as pixels. The engine implements the console screen buffer to draw graphics, utilising virtual 'game loop' methods, to manage rendering efficiently.<br>
+						<p> 
+							After needing to repeat the familiar set-up of a game-loop, user input management, and handling the console buffer to render simple graphics within the console for a few personal projects, I decided to create a simple graphics engine to ease the process.
+							<div class="figure-container">
+								<figure>
+									<img src="../images/kablam_engine/tetronimo.png" onclick="openImageModal(this.src)" />
+									<figcaption>Needs more work...</figcaption>
+								</figure>
+								<figure>
+									<img src="../images/kablam_engine/firstRaycaster.png" onclick="openImageModal(this.src)" />
+									<figcaption>First raycaster</figcaption>
+								</figure>		
+							</div>
+							It has morphed into a bigger project that I have used to learn more about low-level memory management, graphics rendering, game design, practice C++, and implement more advanced design patterns that I learnt on my MSc. Please check out the fantastic OneLoneCoder tutorials as these were very helpful (link at the bottom of the page).
+							<br><br>
+							Using the Windows API, and focusing on console screen buffer management, it achieves graphics rendering in the console window by using glyphs and colours as pixels and a virtual 'game loop' to handle updating the screen.
+							<br><br>
 							The project provided hands-on experience with lower-level memory management and the application of design patterns such as factory, strategy, composite and state to create expandable and maintainable code.
-							<hr class="transparent-hr">
-							
-							<figure class="figure-right">
-								<img src="../images/texture_painter/octo_hit_sprite_full.JPG" alt="Main Screen" onclick="openImageModal(this.src)" />
-								<figcaption>Sprite design</figcaption>
-							</figure>
-							<p class="justified-text"> 
-
+							<hr>
+							<h2><strong>Overview</strong></h2>
+							Key features include methods for drawing bespoke text, points, lines, rectangles, and circles, handling keyboard and mouse input, and managing the console's display properties such as resolution and font size (effectively pixel size). The engine supports both immediate and deferred rendering techniques, and includes utility functions for logging events, managing game state, and gracefully handling application shutdown.
+							<br><br>
+							It also allows for the creation of textured graphics, including drawing and scaling textures, and applying linear filtering for smoother graphics (tricky with only 16 colours and glyphs). The engine is designed to be extensible, with virtual methods that users can override to define game-specific behavior.
+							<br><br>
+							<h3><strong>Examples</strong></h3>
+							<div class="figure-container">
+								<figure>
+									<img src="../images/texture_painter/octo_hit_sprite_full.JPG" onclick="openImageModal(this.src)" />
+									<figcaption>Texture Painter App.</figcaption>
+								</figure>
+								<figure>
+									<img src="../images/kablam_engine/ingame_03.JPG" onclick="openImageModal(this.src)" />
+									<figcaption>Raycaster Upgrade</figcaption>
+								</figure>		
+							</div>
+							<br>
 							I built a texture editor to create and edit textures to be used by the engine (this can be seen <a href="../pages/texturePainter.html" target="_blank">here</a>). This developed into a fully functional editing application as it became apparent that I needed a way of drawing interesting art if I wanted to develop my concept game (and other projects) further.
-							<hr class="transparent-hr">
-
-							<figure class="figure-right">
-								<img src="../images/kablam_engine/KablamGame3D.JPG" alt="Main Screen" onclick="openImageModal(this.src)" />
-								<figcaption>Scene from Demo Game</figcaption>
-							</figure>
-							<p class="justified-text"> 
-
+							<br><br>
 							I am currently building a raycasting FPS concept game to demonstrate functionality (this can be seen <a href="../pages/kablamGame3D.html" target="_blank">here</a>). The video shows some of the game mechanics that are working at present. The textures were designed in the TexturePainter app (above), also built with the console graphics engine. 
-						</p>
-						<hr class="transparent-hr">
-						<p class="justified-text">
+							<br><br>
 							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video here</a>
 							<br>
     						<span class="video-description">
 								This demo video shows the the concept game utilising the engine. This is still a work in progess!  </span>
 							<br>
-							<p class="justified-text"> 
-
 							Music used in game - <a href="https://freesound.org/people/Victor_Natas/sounds/684912/">Caught in the hex</a> by <a href="https://freesound.org/people/Victor_Natas/">Victor_Natas</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
 						</p>
 						<hr>
+						<h2><strong>Further Information</strong></h2>
+						<p>
+							Overall, KablamEngine provides a comprehensive framework for developing console-based graphical applications, with extensive support for window management, texture handling, and input processing. While it operates within the constraints of the Windows console, it allows for the development of graphically rich and engaging applications in a retro style.
+							<br><br>
+							<h3><strong>Console Window Management</strong></h3>
+							The console window configuration is handled by the engine. The BuildConsole method sets the console dimensions, font size, and position. It initializes the console screen buffer and ensures it fits within the screen's resolution.<br>
+							The engine can toggle between windowed and full-screen modes using the SetFullScreen method, dynamically adjusting font sizes to match the screen resolution. It also manages the console's input mode and window resize behavior, ensuring a consistent user experience.
+							
+							<br><br>
+							<h3><strong>Texture Handling</strong></h3>
+							The engine integrates a Texture class for managing graphical textures within the console. Textures are defined by an array of colors and glyphs, which represent the visual content of the texture.<br>
+							The Texture class includes methods for loading textures from files, saving them, and initialising them with default values. It also supports mipmapping, generating lower resolution versions of the texture for efficient rendering at different scales.
+							<br><br>
+							<strong>Initialisation and Loading:</strong> Textures can be initialised with specific dimensions and colors or loaded from a file. The constructor allows for creating a texture with or without mipmaps.
+							<br><br>
+							<strong>Copying and Assignment:</strong> The class supports copy construction and assignment, ensuring deep copies of texture data, including mipmaps.
+							<br><br>
+							<strong>Mipmaps:</strong> Mipmaps are precomputed, progressively lower resolution representations of the texture, stored in a linked list. The GenerateMipmaps method creates these levels, and the Downsample method handles the reduction of texture detail.
+							<br><br>
+							<strong>Sampling and Rendering:</strong> Textures can be sampled at specific coordinates, with methods to get the color, glyph, or combined CHAR_INFO of a pixel. The engine supports linear interpolation and mipmapping for smoother rendering.
+							<br><br>
+							<strong>Dynamic Updates:</strong> The SetColour, SetGlyph, and SetPixel methods allow for modifying the texture's content dynamically. The Clear method resets the texture to a specified color and glyph.
+							<br><br>
+							<strong>Utility Functions:</strong> The SaveAs and LoadFrom methods enable textures to be saved to and loaded from files.
+							<br><br>
+							<strong>Example Usage in KablamEngine</strong><br>
+							Within the engine, textures can be drawn to the console screen using methods like DrawTextureToScreen and DrawPartialTextureToScreen. These methods handle the scaling and positioning of the texture on the console, allowing for efficient and flexible rendering of graphical content. The engine can also apply bilinear filtering to smooth out textures, enhancing the visual quality.<br>
+							
+							<br><br>
+							<h3><strong>Input Handling</strong></h3>
+							The engine includes robust input handling capabilities, managing both keyboard and mouse events within the console environment. The engine tracks the state of each key using two arrays: newKeyStateArray and oldKeyStateArray. These arrays store the current and previous states of all virtual key codes, respectively. The UpdateInputStates method updates these arrays and determines if a key has been pressed, held, or released, ensuring responsive and accurate input detection.
+							<br><br>
+							<strong>Key states</strong> are managed through a KeyState struct, which tracks whether a key is pressed, held, or released. This allows the engine to differentiate between one-time key presses and keys being held down. The GetKeyState method provides access to the state of specific keys, enabling user-defined responses to various inputs.
+							<br><br>
+							<strong>Mouse input</strong> is handled through the console's input buffer. The engine reads the buffer for mouse events, updating the mouse coordinates and detecting button clicks. The GetMousePosition method returns the current mouse coordinates, allowing for interaction based on the mouse's location within the console window.
+							<br><br>
+							Additionally, the engine can detect <strong>focus events</strong>, determining whether the console window is active. This is useful for pausing the game when the window loses focus, ensuring that gameplay is not interrupted by unintentional inputs when the window is not in use. The SetConsoleFocusPause method allows toggling this behavior, and focus changes are logged for debugging purposes.
+							
+							<br><br>
+							<h3><strong>Bespoke Text Rendering</strong></h3>
+							KablamEngine offers bespoke text rendering capabilities (as console glyphs will likely be too small to read as by design they will be pixel sized!) enabling developers to display custom text with specific attributes and precise positioning within the console window. The TextDisplay class in KablamEngine provides methods to render individual characters or entire strings using predefined patterns for each character. These patterns are stored in arrays and can represent both small and large character sizes.
+							<br><br>
+							The DisplayChar and DisplayString methods utilize these patterns to draw text at specified coordinates with chosen colors and glyphs. The flexibility in defining character sizes and styles allows for detailed and customized text display, which is especially useful for creating interfaces, displaying messages, or adding information to graphics.
+							<br><br>
+							Additionally, the ability to dynamically add new character patterns through methods like AddPatternSmall and AddPatternLarge ensures that the text rendering system can be easily extended and adapted to various needs. This bespoke text rendering system enhances the visual richness of console applications, making it possible to incorporate intricate and visually appealing text elements.
+
+							<br><br>
+							<h3><strong>Limitations</strong></h3>
+							Despite its versatility, KablamEngine has some inherent limitations due to the constraints of the Windows console environment. One major limitation is the color palette, which is restricted to 16 colors. This limitation arises because the Windows console uses a 4-bit attribute to represent colors, allowing for only 16 possible values (8 foreground and 8 background colors). However, this can be mitigated by creative use of glyphs and combining different foreground and background colors.
+							<br><br>
+							By strategically selecting and blending these colors, and using various Unicode block characters, it's possible to create the illusion of more complex shading and gradients. The Texture class and drawing methods in KablamEngine, such as LinearInterpolationWithGlyphShading, exploit these techniques to enhance visual quality, making the most of the available color space. Despite this workaround, the graphical fidelity remains limited compared to modern graphical applications, which can use millions of colors and advanced rendering techniques.
+						</p>
 
 					<h3><strong>Gallery</strong></h3>
 					<div class="figure-container">
@@ -109,7 +174,7 @@
 					</div>
 					<hr>
 					<h3><strong>Helpful Resources and Content</strong></h3>
-					<p class="justified-text">
+					<p>
 						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
 						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>				
 					</p>
