@@ -55,14 +55,14 @@
 							</div>
 							It has morphed into a bigger project that I have used to learn more about low-level memory management, graphics rendering, game design, practice C++, and implement more advanced design patterns that I learnt on my MSc. Please check out the fantastic OneLoneCoder tutorials as these were very helpful (link at the bottom of the page).
 							<br><br>
-							Using the Windows API, and focusing on console screen buffer management, it achieves graphics rendering in the console window by using glyphs and colours as pixels and a virtual 'game loop' to handle updating the screen.
+							Using the Windows API, and focusing on console screen buffer management, it achieves graphics rendering in the console window by using glyphs and colours as pixels and a game thread populated with overridable virtual methods to handle initialising and updating the screen.
 							<br><br>
 							The project provided hands-on experience with lower-level memory management and the application of design patterns such as factory, strategy, composite and state to create expandable and maintainable code.
 							<hr>
 							<h2><strong>Overview</strong></h2>
-							Key features include methods for drawing bespoke text, points, lines, rectangles, and circles, handling keyboard and mouse input, and managing the console's display properties such as resolution and font size (effectively pixel size). The engine supports both immediate and deferred rendering techniques, and includes utility functions for logging events, managing game state, and gracefully handling application shutdown.
+							Key features include methods for drawing bespoke text, points, lines, rectangles, and circles, handling keyboard and mouse input, and managing the console's display properties such as resolution and font size (effectively pixel size). The engine includes utility functions for logging events, managing game state, and gracefully handling application shutdown.
 							<br><br>
-							It also allows for the creation of textured graphics, including drawing and scaling textures, and applying linear filtering for smoother graphics (tricky with only 16 colours and glyphs). The engine is designed to be extensible, with virtual methods that users can override to define game-specific behavior.
+							It allows for the creation of textured graphics, including drawing and scaling textures, and applying linear filtering for smoother graphics (tricky with only 16 colours and glyphs). The engine is designed to be extensible, with virtual methods that users can override to define game-specific behavior.
 							<br><br>
 							<h3><strong>Examples</strong></h3>
 							<div class="figure-container">
@@ -90,7 +90,7 @@
 						<hr>
 						<h2><strong>Further Information</strong></h2>
 						<p>
-							Overall, KablamEngine provides a comprehensive framework for developing console-based graphical applications, with extensive support for window management, texture handling, and input processing. While it operates within the constraints of the Windows console, it allows for the development of graphically rich and engaging applications in a retro style.
+							Overall, KablamEngine provides a comprehensive framework for developing console-based graphical applications, with game thread management, texture handling, and input processing. While it operates within the constraints of the Windows console, it allows for the development of graphically rich and engaging applications in a retro style.
 							<br><br>
 							<h3><strong>Console Window Management</strong></h3>
 							The console window configuration is handled by the engine. The BuildConsole method sets the console dimensions, font size, and position. It initializes the console screen buffer and ensures it fits within the screen's resolution.<br>
