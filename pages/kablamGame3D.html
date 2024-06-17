@@ -25,45 +25,45 @@
 			</header>
 
 		<!-- Main -->
-			<div id="main">
+			<div id="main" class="justified-text">
 
 				<!-- One -->
 				<ul class="actions right">
 					<li class="right"><input type="submit" value="back to portfolio" class="primary" onclick="location.href='../index.html';"></li>
 					<li class="right"><input type="submit" value="github code repo" onclick="location.href='https://github.com/colonelkablam/Microcontroller_emulator';"></li>
 					<li class="right"><input type="submit" value="github.md" onclick="showReadmeModal();"></li>
-
-
 				</ul>
 					<section>
 						<header>
 							<h1><strong>KablamGame 3D</strong></h1>
-							<h3><strong>Retro Style Raycaster Shooter - using my console graphics engine</strong></h1>
-
+							<h2><strong>Retro-style raycaster shooter using console graphics  </strong></h2>
 						</header>
 
-						<p class="justified-text"> 
+						<p> 
 							<figure class="figure-right">
-								<img src="../images/kablam_engine/KablamGame3D.JPG" alt="Main Screen" onclick="openImageModal(this.src)" />
-								<figcaption>Scene from Demo Game</figcaption>
+								<img src="../images/kablam_game3D/KG3D_rotatable_sprite.gif" alt="Main Screen" onclick="openImageModal(this.src)" />
+								<figcaption>Scene from demo game</figcaption>
 
 							</figure>
-							<p class="justified-text"> 
-							The game renders the 3D environment using Digital Differential Analysis (DDA) raycasting. This is possible as the world is represented as a tile-based map (essentially a 2D array of integers). There are textures for walls, floors, ceilings, and sprites, with a depth buffer system to handle rendering order and visibility, a dynamic skybox, and sound effects managed by a custom sound manager (implementing the <a href="https://www.ambiera.com/irrklang/" target="_blank">irrKlang</a> library).
+							<p> 
+							The game renders the 3D-like environment using Digital Differential Analysis (DDA) raycasting. This is possible as the world is represented as 3 tile-based maps (2D grid of integers programatically representated as a 1D vector) for the ceiling, floor and walls.<br><br>
+							Textures are rendered on to the environement tiles and sprites, with a depth buffer system to handle rendering order and visibility. There is also a dynamic skybox(ish) and sound effects are managed by a custom sound manager (implementing the <a href="https://www.ambiera.com/irrklang/" target="_blank">irrKlang</a> library).<br><br>
+							An dynamic vector 'environment map' is generated that integrates all the tile information from the map and generates a collision and effect map that the player and game objects adhere to (transparency for AI, damage on certain floor tiles, collisions, door states, teleportation, etc.).
 							<br><br>
-							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video here</a> This video demos current gameplay.
+							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video</a> This video demos current gameplay.
 							<br>
 							Music used in game - <a href="https://freesound.org/people/Victor_Natas/sounds/684912/">Caught in the hex</a> by <a href="https://freesound.org/people/Victor_Natas/">Victor_Natas</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
 							<hr>
-							<h4><strong>Key features include:</strong></h4>
-							<li class="justified-text"><strong>Graphics:</strong> The raycasting system iterates through each column of the screen, calculating the angle and distance to walls, floors, and ceilings. The system then uses this to determine the intersection points with the environment and sample the textures accordingly. Different display settings (e.g., normal, distance shading, angle shading) are supported, allowing for various visual effects. I am currently working on a more advanced lighting solution and the challenge is making it run at a playable speed.</li>
-							<li class="justified-text"><strong>Texture Management:</strong>. Efficient handling and rendering of textures onto a pseudo 3D environment.</li>
-							<li class="justified-text"><strong>Sprite Management:</strong> Using the composite design pattern, sprites are composed of multiple smaller components. This makes it easier to manage and extend their behavior for the desired effect.</li> 
-                            <li class="justified-text"><strong>Collision Detection: </strong> line intersection collision detection algorithms are used for interactions between the player, environment, and other objects.</li>
-                            <li class="justified-text"><strong>AI and Object Interaction:</strong> Implemented AI behaviors, including enemy characteristics and their interaction with the player and the environment. 
-							<li class="justified-text"><strong>Sound Management:</strong> Integrated sound manager for in-game music and sound effects, enhancing the immersive experience using the irrKlang library rather than Windows for more comprehensive sound management.</li>
+							<h2><strong>Key features include:</strong></h2>
+							<li><strong>Graphics:</strong> The raycasting system iterates through each column of the screen, calculating the angle and distance to walls, floors, and ceilings. The system then uses this to determine the intersection points with the environment and sample the textures accordingly.<br>
+							Different display settings (e.g., normal, distance shading, angle shading) are supported, allowing for various visual effects. I am currently working on a more advanced lighting solution and the challenge is making it run at a playable speeds.</li>
+							<li><strong>Texture Management:</strong>. Efficient handling and rendering of textures onto a pseudo 3D environment.</li>
+							<li><strong>Sprite Management:</strong> Using the composite design pattern, sprites are composed of multiple smaller components. This makes it easier to manage and extend their behavior for the desired effect.</li> 
+                            <li><strong>Collision Detection: </strong> line intersection collision detection algorithms are used for interactions between the player, environment, and other objects.</li>
+                            <li><strong>AI and Object Interaction:</strong> Implemented AI behaviors, including enemy characteristics and their interaction with the player and the environment. 
+							<li><strong>Sound Management:</strong> Integrated sound manager for in-game music and sound effects, enhancing the immersive experience using the irrKlang library rather than Windows for more comprehensive sound management.</li>
 							<br>
-							<p class="justified-text"> 
+							<p> 
                             This project has been a wonderful way to increase my ability to develop complex systems from the ground up, and taught me a lot about computer graphics, game mechanics, and software engineering principles in the process. It continues to be great fun to develop.
 							<br>
 						</p>
@@ -71,38 +71,37 @@
 
 					<div class="figure-container">
 						<figure>
-							<img src="../images/kablam_game3D/ingame_01.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/kablam_game3D/KG3D_skybox.gif" onclick="openImageModal(this.src)" />
+							<figcaption>Sky rendering</figcaption>
 						</figure>
 						<figure>
 							<img src="../images/kablam_game3D/ingame_02.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<figcaption>Octobaddies!</figcaption>
 
 						</figure>	
 						<figure>
-							<img src="../images/kablam_game3D/ingame_03.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/kablam_game3D/KG3D_collisions.gif" onclick="openImageModal(this.src)" />
+							<figcaption>Collision handling</figcaption>
 						</figure>	
 					</div>
 					<div class="figure-container">
 						<figure>
-							<img src="../images/kablam_game3D/ingame_04.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/kablam_game3D/KG3D_animated_sprite.gif" onclick="openImageModal(this.src)" />
+							<figcaption>Animated sprite</figcaption>
 						</figure>
 						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/kablam_game3D/KG3D_door.gif" onclick="openImageModal(this.src)" />
+							<figcaption>Door mechanics</figcaption>
 
 						</figure>	
 						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<img src="../images/kablam_game3D/KG3D_jump_look.gif" onclick="openImageModal(this.src)" />
+							<figcaption>Jump and look up/down</figcaption>
 						</figure>	
 					</div>
 					<hr>
-					<h3><strong>Helpful Resources and Content</strong></h1>
-
-					<p class="justified-text">
+					<h2><strong>Helpful Resources and Content</strong></h2>
+					<p>
 						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some floundering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
 						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>	
 						<a href="https://lodev.org/cgtutor/raycasting.html" target="_blank">Lode's DDA raycasting tutorial</a> - A particularly thorough explanation of raycasting.<br>	
