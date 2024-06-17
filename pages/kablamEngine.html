@@ -135,46 +135,34 @@
 							Additionally, the ability to dynamically add new character patterns through methods like AddPatternSmall and AddPatternLarge ensures that the text rendering system can be easily extended and adapted to various needs. This bespoke text rendering system enhances the visual richness of console applications, making it possible to incorporate intricate and visually appealing text elements.
 
 							<br><br>
-							<h3><strong>Limitations</strong></h3>
+							<h3><strong>Limitations and Advantages</strong></h3>
 							Despite its versatility, KablamEngine has some inherent limitations due to the constraints of the Windows console environment. One major limitation is the color palette, which is restricted to 16 colors. This limitation arises because the Windows console uses a 4-bit attribute to represent colors, allowing for only 16 possible values (8 foreground and 8 background colors). However, this can be mitigated by creative use of glyphs and combining different foreground and background colors.
 							<br><br>
-							By strategically selecting and blending these colors, and using various Unicode block characters, it's possible to create the illusion of more complex shading and gradients. The Texture class and drawing methods in KablamEngine, such as LinearInterpolationWithGlyphShading, exploit these techniques to enhance visual quality, making the most of the available color space. Despite this workaround, the graphical fidelity remains limited compared to modern graphical applications. I'd argue that that this assists the user in understanding the what is happening under the hood, encourages creative solutions to be saught, and allows for an interesting aesthetic to be developed.
+							By strategically selecting and blending these colors, and using various Unicode block characters, it's possible to create the illusion of more complex shading and gradients. The Texture class and drawing methods in KablamEngine, such as LinearInterpolationWithGlyphShading, exploit these techniques to enhance visual quality, making the most of the available color space. Despite this workaround, the graphical fidelity remains limited compared to modern graphical applications.
+							<br><br>
+							I'd argue that the limitations present assist the user in understanding the what is happening under the hood, encourages creative solutions to be sought, and allows for an interesting aesthetic to be developed. I have learnt a great deal from this project and am enjoying continuing to develop further features and functionality. Being able to create applications and games with a limited engine keeps a lot of the control with the user and motivates careful use of resources. 
 						</p>
+						<hr>
 
-					<h3><strong>Gallery</strong></h3>
+					<h2><strong>Gallery</strong></h2>
 					<div class="figure-container">
 						<figure>
 							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<figcaption>Pics to follow</figcaption>
 						</figure>
 						<figure>
 							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<figcaption>Pics to follow</figcaption>
 
 						</figure>	
 						<figure>
 							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
-						</figure>	
-					</div>
-					<div class="figure-container">
-						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
-						</figure>
-						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
-
-						</figure>	
-						<figure>
-							<img src="../images/kablam_engine/KablamGame3D.JPG" onclick="openImageModal(this.src)" />
-							<figcaption>More pics to follow</figcaption>
+							<figcaption>Pics to follow</figcaption>
 						</figure>	
 					</div>
 					<hr>
 					<div id="links">
-						<h3><strong>Helpful Resources and Content</strong></h3>
+						<h2><strong>Helpful Resources and Content</strong></h2>
 						<p>
 							<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format and concept of a colour/glyph pixel are used in my design. I also based my initial game-loop implementation on his design.<br>
 							<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures and understanding DDA raycasting further.<br>				
