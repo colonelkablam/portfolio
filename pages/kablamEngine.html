@@ -53,7 +53,7 @@
 									<figcaption>First raycaster</figcaption>
 								</figure>		
 							</div>
-							It has morphed into a bigger project that I have used to learn more about low-level memory management, graphics rendering, game design, practice C++, and implement more advanced design patterns that I learnt on my MSc. Please check out the fantastic OneLoneCoder tutorials as these were very helpful (link at the bottom of the page).
+							It has morphed into a bigger project that I have used to learn more about low-level memory management, graphics rendering, game design, practice C++, and implement more advanced design patterns that I learnt on my MSc. Please check out the fantastic OneLoneCoder tutorials as these were very helpful (link at the <a href="#links" target="_blank">bottom of the page</a>).
 							<br><br>
 							Using the Windows API, and focusing on console screen buffer management, it achieves graphics rendering in the console window by using glyphs and colours as pixels and a game thread populated with overridable virtual methods to handle initialising and updating the screen.
 							<br><br>
@@ -68,7 +68,7 @@
 							<div class="figure-container">
 								<figure>
 									<img src="../images/texture_painter/octo_hit_sprite_full.JPG" onclick="openImageModal(this.src)" />
-									<figcaption>Texture Painter App.</figcaption>
+									<figcaption>Texture Editor</figcaption>
 								</figure>
 								<figure>
 									<img src="../images/kablam_engine/ingame_03.JPG" onclick="openImageModal(this.src)" />
@@ -76,15 +76,15 @@
 								</figure>		
 							</div>
 							<br>
-							I built a texture editor to create and edit textures to be used by the engine (this can be seen <a href="../pages/texturePainter.html" target="_blank">here</a>). This developed into a fully functional editing application as it became apparent that I needed a way of drawing interesting art if I wanted to develop my concept game (and other projects) further.
-							<br><br>
-							I am currently building a raycasting FPS concept game to demonstrate functionality (this can be seen <a href="../pages/kablamGame3D.html" target="_blank">here</a>). The video shows some of the game mechanics that are working at present. The textures were designed in the TexturePainter app (above), also built with the console graphics engine. 
-							<br><br>
-							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video here</a>
+							I built a texture editor to create and edit textures to be used by the engine (<a href="../pages/texturePainter.html" target="_blank">project page</a>). This developed into a fully functional editing application as it became apparent that I needed a way of drawing interesting art if I wanted to develop my concept game (and other projects) further.
 							<br>
-    						<span class="video-description">
-								This demo video shows the the concept game utilising the engine. This is still a work in progess!  </span>
+							<a href="https://drive.google.com/file/d/1Q0otbL2Lg7M_MBnx-Q71PSSZcuYuYSnH/view?usp=sharing" target="_blank">Watch  demo video of TexturePainter</a>
+							<br><br>
+							I am currently building a raycasting FPS concept game to demonstrate functionality (<a href="../pages/kablamGame3D.html" target="_blank">project page</a>). The video shows some of the game mechanics that are working at present. The textures were designed in the TexturePainter app (above), also built with the console graphics engine. 
 							<br>
+							<a href="https://drive.google.com/file/d/1OpJ1OAFEIKk5FQBOf2EjvIWzA5SjKo_j/view?usp=sharing" target="_blank">Watch  demo video of game</a>
+							<br>
+    						
 							Music used in game - <a href="https://freesound.org/people/Victor_Natas/sounds/684912/">Caught in the hex</a> by <a href="https://freesound.org/people/Victor_Natas/">Victor_Natas</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
 						</p>
 						<hr>
@@ -107,14 +107,14 @@
 							<br><br>
 							<strong>Mipmaps:</strong> Mipmaps are precomputed, progressively lower resolution representations of the texture, stored in a linked list. The GenerateMipmaps method creates these levels, and the Downsample method handles the reduction of texture detail.
 							<br><br>
-							<strong>Sampling and Rendering:</strong> Textures can be sampled at specific coordinates, with methods to get the color, glyph, or combined CHAR_INFO of a pixel. The engine supports linear interpolation and mipmapping for smoother rendering.
+							<strong>Sampling and Rendering:</strong> Textures can be sampled at specific coordinates, with methods to get the color, glyph, or both elements of a pixel. The engine supports linear interpolation and mipmapping for smoother rendering.
 							<br><br>
 							<strong>Dynamic Updates:</strong> The SetColour, SetGlyph, and SetPixel methods allow for modifying the texture's content dynamically. The Clear method resets the texture to a specified color and glyph.
 							<br><br>
 							<strong>Utility Functions:</strong> The SaveAs and LoadFrom methods enable textures to be saved to and loaded from files.
 							<br><br>
 							<strong>Example Usage in KablamEngine</strong><br>
-							Within the engine, textures can be drawn to the console screen using methods like DrawTextureToScreen and DrawPartialTextureToScreen. These methods handle the scaling and positioning of the texture on the console, allowing for efficient and flexible rendering of graphical content. The engine can also apply bilinear filtering to smooth out textures, enhancing the visual quality.<br>
+							Within the engine, textures can be drawn to the console screen using methods like DrawTextureToScreen and DrawPartialTextureToScreen. These methods handle the scaling and positioning of the texture on the console, allowing for efficient and flexible rendering of graphical content. The engine can also apply bilinear filtering to smooth out textures, enhancing the visual quality.
 							
 							<br><br>
 							<h3><strong>Input Handling</strong></h3>
@@ -128,7 +128,7 @@
 							
 							<br><br>
 							<h3><strong>Bespoke Text Rendering</strong></h3>
-							KablamEngine offers bespoke text rendering capabilities (as console glyphs will likely be too small to read as by design they will be pixel sized!) enabling developers to display custom text with specific attributes and precise positioning within the console window. The TextDisplay class in KablamEngine provides methods to render individual characters or entire strings using predefined patterns for each character. These patterns are stored in arrays and can represent both small and large character sizes.
+							KablamEngine offers bespoke text rendering capabilities (as console glyphs will likely be too small to read as by design they will be pixel sized) enabling the display of custom text with specific attributes and precise positioning within the console window. The TextDisplay class in KablamEngine provides methods to render individual characters or entire strings using predefined patterns for each character. These patterns are stored in arrays and can represent both small and large character sizes.
 							<br><br>
 							The DisplayChar and DisplayString methods utilize these patterns to draw text at specified coordinates with chosen colors and glyphs. The flexibility in defining character sizes and styles allows for detailed and customized text display, which is especially useful for creating interfaces, displaying messages, or adding information to graphics.
 							<br><br>
@@ -138,7 +138,7 @@
 							<h3><strong>Limitations</strong></h3>
 							Despite its versatility, KablamEngine has some inherent limitations due to the constraints of the Windows console environment. One major limitation is the color palette, which is restricted to 16 colors. This limitation arises because the Windows console uses a 4-bit attribute to represent colors, allowing for only 16 possible values (8 foreground and 8 background colors). However, this can be mitigated by creative use of glyphs and combining different foreground and background colors.
 							<br><br>
-							By strategically selecting and blending these colors, and using various Unicode block characters, it's possible to create the illusion of more complex shading and gradients. The Texture class and drawing methods in KablamEngine, such as LinearInterpolationWithGlyphShading, exploit these techniques to enhance visual quality, making the most of the available color space. Despite this workaround, the graphical fidelity remains limited compared to modern graphical applications, which can use millions of colors and advanced rendering techniques.
+							By strategically selecting and blending these colors, and using various Unicode block characters, it's possible to create the illusion of more complex shading and gradients. The Texture class and drawing methods in KablamEngine, such as LinearInterpolationWithGlyphShading, exploit these techniques to enhance visual quality, making the most of the available color space. Despite this workaround, the graphical fidelity remains limited compared to modern graphical applications. I'd argue that that this assists the user in understanding the what is happening under the hood, encourages creative solutions to be saught, and allows for an interesting aesthetic to be developed.
 						</p>
 
 					<h3><strong>Gallery</strong></h3>
@@ -173,11 +173,13 @@
 						</figure>	
 					</div>
 					<hr>
-					<h3><strong>Helpful Resources and Content</strong></h3>
-					<p>
-						<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format was used in my design. I also based my game-loop implementation on his initial design.<br>
-						<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures.<br>				
-					</p>
+					<div id="links">
+						<h3><strong>Helpful Resources and Content</strong></h3>
+						<p>
+							<a href="https://www.youtube.com/@javidx9" target="_blank">OneLoneCoder</a> - An extreamly useful resource for learning the Windows API and handling the console. After some flondering with the screen buffer it was very fortunate to find his tutorial series! His texture format and concept of a colour/glyph pixel are used in my design. I also based my initial game-loop implementation on his design.<br>
+							<a href="https://www.youtube.com/@3DSage" target="_blank">3DSage</a> - A very good set of tutorials for implementing raycasting. This was particularly helpful for rendering the floor and ceiling textures and understanding DDA raycasting further.<br>				
+						</p>
+					</div>
 
 					</section>
 
