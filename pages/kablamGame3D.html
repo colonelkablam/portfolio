@@ -46,7 +46,7 @@
 							</figure>
 							<p> 
 							The game renders the 3D-like environment using Digital Differential Analysis (DDA) raycasting. This is possible as the world is represented as 3 tile-based maps (2D grid of integers programatically representated as a 1D vector) for the ceiling, floor and walls.<br><br>
-							Textures are rendered on to the environement tiles and sprites, with a depth buffer system to handle rendering order and visibility. There is also a dynamic skybox(ish) and sound effects are managed by a custom sound manager (implementing the <a href="https://www.ambiera.com/irrklang/" target="_blank">irrKlang</a> library).<br><br>
+							Textures are rendered on to the environement tiles and sprites, with a depth buffer system to handle rendering order and visibility. There is also a dynamic(ish) skybox and sound effects are managed by a custom sound manager (implementing the <a href="https://www.ambiera.com/irrklang/" target="_blank">irrKlang</a> library).<br><br>
 							An dynamic vector 'environment map' is generated that integrates all the tile information from the map and generates a collision and effect map that the player and game objects adhere to (transparency for AI, damage on certain floor tiles, collisions, door states, teleportation, etc.).
 							<br>
 							<figure class="figure-right">
