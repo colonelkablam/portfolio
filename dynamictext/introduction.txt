@@ -1,3 +1,1 @@
 I am a Software Engineering MSc graduate with distinction from the University of Westminster, transitioning from a rewarding 20-year career as a paramedic to pursue my passion for software development. With a strong foundation in both front-end and back-end technologies, I’m focusing on full-stack development and enjoy building applications that provide meaningful user experiences.<br><br>
-
-While I am particularly excited by the challenges of web development, I remain passionate about lower-level languages, computer architecture, and the potential of games and educational applications. I am always eager to learn new languages and frameworks to build robust and scalable solutions.<br><br>

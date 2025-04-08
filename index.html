@@ -32,8 +32,14 @@
 				<!-- One -->
 					<section id="one">
 						<header>
-							<h1><strong>Portfolio of Freelance, Academic, and Personal Projects</strong><br></h1>
+							<h1><strong>Portfolio of Work</strong><br></h1>
+							<div style="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+								<a href="#freelance" title="go to freelance projects" class="nav-link">Freelance</a>
+								<a href="#academic" title="go to academic projects" class="nav-link">Academic</a>
+								<a href="#personal" title="go to personal projects" class="nav-link">Personal</a>
+							</div>
 						</header>
+
 						<p id="introduction-text"></p>
 						<p id="introduction_full-text" style="display: none;"></p>
 						<div>
@@ -48,7 +54,7 @@
 
 				<!-- Two -->
 					<section id="two">
-						<h2><strong>Freelance Projects</strong></h2>
+						<h2 id="freelance"><strong>Freelance Projects</strong></h2>
 						<div class="row">
 
 							<!-- Stockwell Community Directory Freelance -->
@@ -59,9 +65,17 @@
 							</article>
 							<article class="col-7 col-12-xsmall work-item">
 								<div class="text-box">
-								<h3>Stockwell Community Services Directory Web App - Fullstack</h3>
+								<h3>Fullstack - Stockwell Community Services Directory Web App</h3>
 								</div>
-								<p>Built a searchable directory using React and a lightweight Node.js backend integrated with Google Sheets (a requirement of the client). Used Netlify serverless functions for secure backend logic and API requests.<br>Features included dynamic filtering, Google Maps integration, user-pinned activities, and PDF information sheet export. This reusable template has since supported multiple projects requiring similar functionality</p>
+								<div class="project-highlights">
+									<h4>Node.js · React · Express · Google APIs · Netlify Serverless Functions · JavaScript</h4>
+								</div>
+								<p>
+									Built a searchable activity directory to increase local community engagement using React and a lightweight backend integrated with Google Sheets (a requirement of the client). Used Netlify serverless functions for secure backend logic and API requests.
+								</p>
+								<p>
+									Features included dynamic filtering, OpenStreetMap integration, user-pinned activities, and PDF information sheet export. This reusable template has since supported multiple projects requiring similar functionality
+								<p>
 								<div>
 									<ul class="actions">
 										<li><input type="submit" value="demo website" class="primary" onclick="location.href='https://stockwell-directory.netlify.app/';"></li>
@@ -79,9 +93,17 @@
 							</article>
 							<article class="col-7 col-12-xsmall work-item">
 								<div class="text-box">
-								<h3>Web App Prototype for Connected Minds Lambeth - Fullstack</h3>
+								<h3>Fullstack - Prototype Web App for Connected Minds Lambeth</h3>
 								</div>
-								<p>Designed and developed a secure web-based directory for creative health services. Built a scalable PostgreSQL backend with role-based access, user authentication, and hashed passwords. Created a clean, accessible EJS frontend. Prioritised data privacy, usability, and future-proof architecture.</p>
+								<div class="project-highlights">
+									<h4>Node.js · EJS · Express · JWT · bcrypt · PostgreSQL · Relational DB · JavaScript</h4>
+								</div>
+								<p>
+									Designed and developed a secure web-based directory to enable people to access creative health pathways. Built a scalable PostgreSQL backend with role-based access, user authentication, and hashed passwords. Created a clean, accessible EJS frontend.
+								</p>
+								<p>
+									Prioritised data privacy and security and an emphasis on building an expandable relational database for booking and recording appointments and sessions. It was also important to future-proof the design to allow for straightforward development in the future.
+								</p>
 								<div>
 									<ul class="actions">
 										<li><input type="submit" value="demo website" class="primary" onclick="location.href='https://connected-minds-app-0e7b214ee29d.herokuapp.com/';"></li>
@@ -92,7 +114,7 @@
 							</article>
 						</div>
 
-						<h2><strong>Software Engineering MSc Project</strong></h2>
+						<h2 id="academic"><strong>Academic Projects</strong></h2>
 						<div class="row">
 						<!-- Microcontroller -->
 							<article class="col-5 col-12-xsmall work-item">
@@ -101,10 +123,13 @@
 								</a>
 							</article>
 							<article class="col-7 col-12-xsmall work-item ">
-								<h3>8-bit Microcontroller Simulator</h3>
-            					<div class="text-box">
-                				<p>This was my final Masters project. I designed and built an 8-bit microcontroller simulator in Python to be used as an educational tool, enabling learners to visualise and explore the intricacies of low-level programming and computer architecture.</p>
+								<div class="text-box">
+									<h3>MSc Final Project - Educational Microcontroller Simulator</h3>
 								</div>
+								<div class="project-highlights">
+									<h4>Python · Tkinter · GUI · UI · assembly · SOLID principles</h4>
+								</div>
+                				<p>This was my final Masters project. I designed and built an 8-bit microcontroller simulator in Python to be used as an educational tool, enabling learners to visualise and explore the intricacies of low-level programming and computer architecture.</p>
 								<div>
 									<ul class="actions">
 										<li><input type="submit" value="project page" class="primary" onclick="location.href='pages/microcontroller.html';"></li>
@@ -118,7 +143,7 @@
 
 						</div>
 
-						<h2><strong>Personal Projects</strong></h2>
+						<h2 id="personal"><strong>Personal Projects</strong></h2>
 						<div class="row">
 							<!-- Kablam Graphics Engine -->
 							<article class="col-5 col-12-xsmall picture work-item">
@@ -127,10 +152,13 @@
 								</a>
 							</article>
 							<article class="col-7 col-12-xsmall work-item">
-								<h3>Windows Console Based Graphics Engine</h3>
 								<div class="text-box">
-								<p>Written in C++ and using the Windows API to create a (somewhat niche) graphics engine that runs in the console window. This has been a great fun and educational project for me. Devloping other projects using this has been very satifying.</p>
+									<h3>Windows Console Based Graphics Engine</h3>
 								</div>
+								<div class="project-highlights">
+									<h4>C++ · Windows API · memory management · application of design patterns</h4>
+								</div>
+								<p>Written in C++ and using the Windows API to create a (somewhat niche) graphics engine that runs in the console window. This has been a great fun and educational project for me. Developing other projects using this has been very satisfying.</p>
 								<div>
 									<ul class="actions">
 										<li><input type="submit" value="project page" class="primary" onclick="location.href='pages/kablamEngine.html';"></li>
@@ -267,13 +295,25 @@
 										<td>8-bit Microcontroller Simulator</td>
 										<td>Designed and built an 8-bit microcontroller simulator in Python for educational purposes.</td>
 										<td>Python</td>
-										<td>Low-level programming, Computer Architecture</td>
+										<td>Low-level programming, Computer Architecture, assembly</td>
 									</tr>
 									<tr>
 										<td>Windows Console Based Graphics Engine</td>
 										<td>Created a graphics engine using C++ and the Windows API for console-based applications.</td>
 										<td>C++</td>
-										<td>Graphics Programming, Windows API</td>
+										<td>Graphics Programming, Windows API, Design Patterns</td>
+									</tr>
+									<tr>
+										<td>Stockwell Community Services Directory App</td>
+										<td>Built a searchable community activity directory with filtering and mapping using React.</td>
+										<td>JavaScript</td>
+										<td>Fullstack Development, Node.js, React, Netlify, Google APIs</td>
+									</tr>
+									<tr>
+										<td>Connected Minds Web App Prototype</td>
+										<td>Developed a secure directory with authentication and relational database for appointment booking.</td>
+										<td>JavaScript</td>
+										<td>Fullstack Development, Node.js, Express, PostgreSQL, JWT, Security</td>
 									</tr>
 									<!-- Add more projects as needed -->
 								</tbody>

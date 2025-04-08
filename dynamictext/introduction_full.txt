@@ -1,6 +1,4 @@
-I am a Software Engineering MSc graduate with distinction from the University of Westminster, transitioning from a rewarding 20-year career as a paramedic to pursue my passion for software development. With a strong foundation in both front-end and back-end technologies, I’m focusing on full-stack development and enjoy building applications that provide meaningful user experiences.<br><br>
-
-While I am particularly excited by the challenges of web development, I remain passionate about lower-level languages, computer architecture, and the potential of games and educational applications. I am always eager to learn new languages and frameworks to build robust and scalable solutions.<br><br>
+While I am particularly excited by the challenges of application development, I remain passionate about lower-level languages, computer architecture, and the potential of games and educational applications. I am always eager to learn new languages and frameworks to build robust and scalable solutions.<br><br>
 
 One of my standout professional experiences was working as a Flight Paramedic for London's Air Ambulance for over three years—an incredibly rewarding role that shaped my approach to teamwork, decision-making, and adaptability.<br><br>
 
@@ -8,4 +6,4 @@ During my studies, I developed a deep interest in software development and compu
 
 Prior to my MSc I enjoyed writing creative projects in JavaScript using the p5.js library (inspired by the amazing work of Processing.org) and tinkering with C++. This began to reignite my passion for technology and, after digging my old Amiga 1200 out of the attic and learning to fix it, I decided it was time to change career.<br><br>
 
-As a recent graduate transitioning into full-stack development, I am open to roles that challenge me, push my learning further, and allow me to apply my diverse skill set. The softer skills I gained from working in the Ambulance Service - such as continual development, teamwork, teaching, and compassion - are qualities I look forward to bringing into a new workplace.<br><br>
+As a recent graduate transitioning into software development, I am open to roles that challenge me, push my learning further, and allow me to apply my diverse skill set. The softer skills I gained from working in the Ambulance Service - such as continual development, teamwork, teaching, and compassion - are qualities I look forward to bringing into a new workplace.<br><br>
